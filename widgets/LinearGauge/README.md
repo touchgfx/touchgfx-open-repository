@@ -31,7 +31,6 @@ The following exemplifies, with code, how to set up a LinearGauge widget. Once s
     gauge.enableAnimation(true); 
     
     //Add widgets
-    add(bg);
     add(gauge);
     
  
