@@ -11,7 +11,7 @@ Contributions are encouraged! Each contribution should contain the following:
 
  1. Source and headerfile for widget
  2. Screenshot of the widget in action
- 3. *README.txt* containing:
+ 3. *README.md* containing, in markdown:
    - Purpose of the widget
    - Version(s) of TouchGFX you've tested your code on
    - Functional description of the widget and it's configuration
