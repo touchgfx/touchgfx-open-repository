@@ -11,10 +11,17 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 
 Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
 
+# Links
+
+* [Website] (http://touchgfx.com)
+* [Documentation] (http://touchgfx.com/documentation/html/index.html)
+
 # Videos
 
-* [TouchGFX Demo on STM32F429 Evaluation Board](http://www.youtube.com/watch?v=QcKX_Pc6ldU)
-* [TouchGFX Demo on STM32F4 Discovery Board](http://www.youtube.com/watch?v=j-fgE1hOlbo)
+* [TouchGFX Demo on STM32F429 Evaluation Board 4.3"](http://www.youtube.com/watch?v=QcKX_Pc6ldU)
+* [TouchGFX Demo on STM32F429 Discovery Board 2.4"](http://www.youtube.com/watch?v=j-fgE1hOlbo)
+* [TouchGFX Demo on Embedded Artists LPC4357 DevKit 4.3"](http://www.youtube.com/watch?v=OzRpGLfjh1c)
+* [TouchGFX Demo on TouchGFX Demo Board NXP 4357 4.3"](http://www.youtube.com/watch?v=dvSK0oXQqfA)
 
 # Screenshots
 
