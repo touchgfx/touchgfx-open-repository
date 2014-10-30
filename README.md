@@ -17,9 +17,7 @@ Contributions are encouraged! Each contribution should conform to the following 
    - Version(s) of TouchGFX you've tested your code on
    - Functional description of the widget and it's configuration. Code can be verbatim formatted in .md by indenting with 4 spaces.
 
-On the TouchGFX website you can request a full evaluation version of the framework as well as order commercial licenses. 
-
-Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
+On the TouchGFX website you can request a full evaluation version of the framework as well as order commercial licenses. Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
 
 # List of widgets
 
