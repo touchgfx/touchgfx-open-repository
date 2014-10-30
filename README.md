@@ -9,8 +9,8 @@ This repository will eventually contain numerous examples of and ideas for widge
 
 Contributions are encouraged! Each contribution should conform to the following standards:
 
- 1. Create a folder in widgets/ for your contribution
- 2. Supply atleast Source and headerfiles, example code welcome but not necessary
+ 1. Create a folder inside widgets/ for your contribution
+ 2. Supply atleast source- and headerfiles, example code welcome but not necessary
  2. Supply a screenshot of the widget in action
  3. Create a *README.md* containing, in markdown:
    - Purpose of the widget
