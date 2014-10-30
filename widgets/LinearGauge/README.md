@@ -5,6 +5,8 @@ The purpose of the LinearGauge widget is to provide an application developer wit
 
 The widget supports a linear ease-in equation and for animating between set gauge-values. An animations length is determined by a configurable duration. A developer can ask the LinearGauge widget for the position of it's gauge level, in pixels, relative to it's parent container in an effort to provide a visible indicator that exists outside of the widgets container. One way of implementing this could be creating a further specialization, LinearGaugeWithIndicator.
 
+![Movable gauge content"](tank_content.png "Movable gauge content") ![Gauge background](tank.png "Gauge background") ![Tank low](LinearGauge_low.png "Tank low!")  ![Alt text](LinearGauge_full.png "Tank low")
+
 TouchGFX Version
 =================
 
