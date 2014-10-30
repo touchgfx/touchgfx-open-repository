@@ -7,11 +7,12 @@ The TouchGFX framework, written in C++, allows you to create modern, graphical u
 
 This repository will eventually contain numerous examples of and ideas for widgets, containers and mixins that cannot be found in the core framework (See documentation link below) that can be used as a source of inspiration for your applications but  will not be maintained across new versions of the framework. 
 
-Contributions are encouraged! Each contribution should contain the following:
+Contributions are encouraged! Each contribution should conform to the following standards:
 
- 1. Source and headerfile for widget
- 2. Screenshot of the widget in action
- 3. *README.md* containing, in markdown:
+ 1. Create a folder in widgets/ for your contribution
+ 2. Supply atleast Source and headerfiles, example code welcome but not necessary
+ 2. Supply a screenshot of the widget in action
+ 3. Create a *README.md* containing, in markdown:
    - Purpose of the widget
    - Version(s) of TouchGFX you've tested your code on
    - Functional description of the widget and it's configuration. Code can be verbatim formatted in .md by indenting with 4 spaces.
