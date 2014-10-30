@@ -13,7 +13,6 @@ Read more about the concept of widgets, containers and mixins in  in the TouchGF
 
 # Videos
 
-* [TouchGFX demo at Embedded World 2014](http://www.youtube.com/watch?v=9qMQdrFGXI4)
 * [TouchGFX Demo on STM32F429 Evaluation Board](http://www.youtube.com/watch?v=QcKX_Pc6ldU)
 * [TouchGFX Demo on STM32F4 Discovery Board](http://www.youtube.com/watch?v=j-fgE1hOlbo)
 
