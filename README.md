@@ -5,11 +5,24 @@ touchgfx-widgets
 
 The TouchGFX framework, written in C++, allows you to create modern, graphical user interfaces on limited-resource embedded systems and allows smartphone-like look and feel on hardware platforms an order of magnitude less powerful than smartphones, e.g. ARM Cortex M3/M4 48-204 MHz.
 
-This repository will contain examples of widgets, containers and mixins that cannot be found in the core framework (See documentation link below) that can be used as a source of inspiration for your applications but  will not be maintained across new versions of the framework. Contributions are encouraged!
+This repository will eventually contain numerous examples of and ideas for widgets, containers and mixins that cannot be found in the core framework (See documentation link below) that can be used as a source of inspiration for your applications but  will not be maintained across new versions of the framework. 
+
+Contributions are encouraged! Each contribution should contain the following:
+
+ 1. Source and headerfile for widget
+ 2. Screenshot of the widget in action
+ 3. *README.txt* containing:
+   - Purpose of the widget
+   - Version(s) of TouchGFX you've tested your code on
+   - Functional description of the widget and it's configuration
 
 On the TouchGFX website you can request a full evaluation version of the framework as well as order commercial licenses. 
 
 Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
+
+# List of widgets
+
+ 1. *LinearGauge* (TouchGFX 4.1.1)
 
 # Links
 
