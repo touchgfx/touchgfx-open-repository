@@ -1,7 +1,7 @@
 Purpose
 ========
 
-![Tank low](LinearGauge_low.png "Tank low!")  ![Alt text](LinearGauge_full.png "Tank low")
+![Tank low](LinearGauge_low.png "Tank low!")  ![Tank mid full!](LinearGauge.png "Tank mid full!") ![Alt text](LinearGauge_full.png "Tank full!")
 
 The purpose of the LinearGauge widget is to provide an application developer with means of advancing and declining values in a linear, graphical fashion. Possible directions are: North, South, East, West. The application developer supplies a background image for the gauge as well as an image of the movable part of the gauge.
 
