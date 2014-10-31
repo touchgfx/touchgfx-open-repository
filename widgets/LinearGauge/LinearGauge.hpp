@@ -7,6 +7,20 @@
 
 using namespace touchgfx;
 
+/**
+ * The purpose of the LinearGauge widget is to provide an application 
+ * developer with means of advancing and declining values in a linear, 
+ * graphical fashion. Possible directions are: North, South, East, West. 
+ * The application developer supplies a background image for the gauge 
+ * as well as an image of the movable part of the gauge. The widget supports 
+ * a linear ease-in equation and for animating between set gauge-values. 
+ * An animations length is determined by a configurable duration. 
+
+ * A developer can ask the LinearGauge widget for the position of it's 
+ * gauge level container in an effort to provide a visible indicator that 
+ * exists outside of the widgets container. One way of implementing this 
+ * could be creating a further specialization, LinearGaugeWithIndicator.
+ */
 class LinearGauge : public Container
 {
 public:
@@ -96,9 +110,9 @@ public:
     void setBounds(uint16_t lowerBound, uint16_t upperBound);
     
     /**
-     * Returns Horizontal (x-axis) / Vertical (y-axis) gauge level offset in pixels relative to the parent gauge container
+     * Returns Horizontal (x-axis) / Vertical (y-axis) gauge level offset in pixels relative to the parent gauge container. Usually called from an external source to get a reference for an indicator reference.
      */
-    HV_Offset getGaugeLevelOffsetAbs(); 
+    HV_Offset getGaugeLevelIndicatorPos(); 
     
     /**
      * Sets the orientation of the gauge and influences level calculations. 
@@ -146,7 +160,7 @@ private:
   /**
    * The container for the movable content of the gauge
    */  
-  Container c;
+  Container gaugeContainer;
   
   /**
    * The duration in ticks of a move animation

@@ -3,7 +3,7 @@
 #include <assert.h>
 
 LinearGauge::LinearGauge() : 
-  Container(),
+  //Container(),
   orientation(VERTICAL_NORTH),
   currentVal(0),
   lowerBound(0),
@@ -15,7 +15,7 @@ LinearGauge::LinearGauge() :
 {
   gaugeImg.setMoveAnimationEndedAction(gaugeAnimationEndedCallback);
   add(bg);
-  add(c);
+  add(gaugeContainer);
 }
   
 void LinearGauge::setBounds(uint16_t lower, uint16_t upper)
@@ -43,13 +43,13 @@ LinearGauge::HV_Offset LinearGauge::getGaugeLevelOffsetRel()
 {
   HV_Offset offset;
   
-  offset.x = (c.getWidth()*(currentVal-lowerBound))/(upperBound-lowerBound);
-  offset.y = (c.getHeight()*(currentVal-lowerBound))/(upperBound-lowerBound);  
+  offset.x = (gaugeContainer.getWidth()*(currentVal-lowerBound))/(upperBound-lowerBound);
+  offset.y = (gaugeContainer.getHeight()*(currentVal-lowerBound))/(upperBound-lowerBound);  
   
   return offset;
 }
 
-LinearGauge::HV_Offset LinearGauge::getGaugeLevelOffsetAbs()
+LinearGauge::HV_Offset LinearGauge::getGaugeLevelIndicatorPos()
 {
   HV_Offset offset, offset_rel;
   
@@ -60,23 +60,23 @@ LinearGauge::HV_Offset LinearGauge::getGaugeLevelOffsetAbs()
   switch(orientation)
   {
     case HORIZONTAL_WEST:
-      offset.x = c.getX()+ offset_rel.x;
+      offset.x = gaugeContainer.getX()+ offset_rel.x;
       offset.y = 0;
       break;  
       
     case HORIZONTAL_EAST:
-      offset.x = c.getX()+c.getWidth()-offset_rel.x;
+      offset.x = gaugeContainer.getX()+gaugeContainer.getWidth()-offset_rel.x;
       offset.y = 0; 
       break;  
       
     case VERTICAL_NORTH:
       offset.x = 0;
-      offset.y = c.getY()+c.getHeight()-offset_rel.y;
+      offset.y = gaugeContainer.getY()+gaugeContainer.getHeight()-offset_rel.y;
       break;          
       
     case VERTICAL_SOUTH:
       offset.x = 0;
-      offset.y = c.getY()+offset_rel.y;
+      offset.y = gaugeContainer.getY()+offset_rel.y;
       break;           
   }
   
@@ -91,28 +91,28 @@ void LinearGauge::setGaugeLevel(uint16_t level)
   if(level >= lowerBound && level<=upperBound)
   {  
     uint16_t move_x, move_y;
-    HV_Offset p_rel = getGaugeLevelOffsetRel();
+    HV_Offset offset_rel = getGaugeLevelOffsetRel();
         
     switch(orientation)
     {            
       case HORIZONTAL_WEST:
-        move_x = -c.getWidth()+p_rel.x; 
+        move_x = -gaugeContainer.getWidth()+offset_rel .x; 
         move_y = gaugeImg.getY();
         break;  
         
       case HORIZONTAL_EAST:
-        move_x = c.getWidth()-p_rel.x;
+        move_x = gaugeContainer.getWidth()-offset_rel .x;
         move_y = gaugeImg.getY();
         break;  
         
       case VERTICAL_NORTH:
         move_x = gaugeImg.getX();
-        move_y = c.getHeight()-p_rel.y;            
+        move_y = gaugeContainer.getHeight()-offset_rel .y;            
         break;          
         
       case VERTICAL_SOUTH:
         move_x = gaugeImg.getX();
-        move_y = -c.getHeight()+p_rel.y;            
+        move_y = -gaugeContainer.getHeight()+offset_rel.y;            
         break;                  
     }    
     //Depending on animate setting start a move animation or use regular moveTo 
@@ -138,28 +138,21 @@ void LinearGauge::setBackground(const touchgfx::Bitmap& background)
 void LinearGauge::setupGauge(const touchgfx::Bitmap& gauge, uint16_t x, uint16_t y, uint16_t initialVal, uint16_t lowerBound, uint16_t upperBound, Orientation orientation)
 {
   gaugeImg.setBitmap(gauge);
-  c.setWidth(gaugeImg.getWidth());
-  c.setHeight(gaugeImg.getHeight());
+  gaugeContainer.setWidth(gaugeImg.getWidth());
+  gaugeContainer.setHeight(gaugeImg.getHeight());
   
   //Configure gauge
   setBounds(lowerBound, upperBound);
   setOrientation(orientation);
   
   //Set reference point: adjust gauge relative to background container (100% filled)
-  c.setXY(x, y);
-  c.add(gaugeImg);  
+  gaugeContainer.setXY(x, y);
+  gaugeContainer.add(gaugeImg);  
   
   //Temporarily disable Animation, if enabled, while setting initial value 
-  if(animate)
-  {
-    enableAnimation(false);
-    setGaugeLevel(initialVal);
-    enableAnimation(true);
-  }
-  else
-  {
-    setGaugeLevel(initialVal);
-  }
+  enableAnimation(false);
+  setGaugeLevel(initialVal);
+  enableAnimation(animate);
 }
 
 void LinearGauge::setStepSize(uint8_t size)
