@@ -1,9 +1,8 @@
 #include <gui/common/LinearGauge.hpp>
 #include <BitmapDatabase.hpp>
-#include <assert.h>
 
 LinearGauge::LinearGauge() : 
-  //Container(),
+  Container(),
   orientation(VERTICAL_NORTH),
   currentVal(0),
   lowerBound(0),
