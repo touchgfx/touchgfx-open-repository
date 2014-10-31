@@ -3,7 +3,7 @@ Purpose
 
 ![Tank low](LinearGauge_low.png "Tank low!")  ![Tank mid full!](LinearGauge.png "Tank mid full!") ![Alt text](LinearGauge_full.png "Tank full!")
 
-The purpose of the LinearGauge widget is to provide an application developer with means of advancing and declining values in a linear, graphical fashion. Possible directions are:  `VERTICAL_NORTH`, `VERTICAL_SOUTH`,  `HORIZONTAL_EAST`,  `HORIZONTAL_WEST`. The application developer supplies a background image for the gauge as well as an image of the movable part of the gauge, as seen below:
+The purpose of the LinearGauge widget is to provide an application developer with means of advancing and declining values in a linear, graphical fashion. Possible directions in which to advance/decline the gauge are: `VERTICAL_NORTH`, `VERTICAL_SOUTH`,  `HORIZONTAL_EAST`,  `HORIZONTAL_WEST`. The application developer supplies a background image for the gauge as well as an image of the movable part of the gauge, as seen below:
 
 ![Tank background!](tank.png "Tank background!") ![Tank content](tank_content.png "Tank content!")
 
@@ -23,7 +23,8 @@ The following exemplifies, with code, how to set up a LinearGauge widget. Once s
     gauge.setBackground(Bitmap(BITMAP_TANK_ID));
 
     //Add the content for the tank. Specify internal container offset (5,18), initial value (500), 
-    lower and upper bounds (200-1000) and the direction in which to advance/decline level of the gauge (VERTICAL_NORTH)
+    lower and upper bounds (200-1000) and the direction in which to advance/decline level of the gauge 
+    (VERTICAL_NORTH)
     gauge.setupGauge(Bitmap(BITMAP_TANK_CONTENT_ID), 5, 18, 500, 200, 1000, LinearGauge::VERTICAL_NORTH); 
   
     //Place the gauge on the screen
