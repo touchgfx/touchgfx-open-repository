@@ -3,14 +3,16 @@ Purpose
 
 ![Tank low](LinearGauge_low.png "Tank low!")  ![Tank mid full!](LinearGauge.png "Tank mid full!") ![Alt text](LinearGauge_full.png "Tank full!")
 
-The purpose of the LinearGauge widget is to provide an application developer with means of advancing and declining values in a linear, graphical fashion. Possible directions are: North, South, East, West. The application developer supplies a background image for the gauge as well as an image of the movable part of the gauge.
+The purpose of the LinearGauge widget is to provide an application developer with means of advancing and declining values in a linear, graphical fashion. Possible directions are: North, South, East, West. The application developer supplies a background image for the gauge as well as an image of the movable part of the gauge, as seen below:
+
+![Tank background!](tank.png "Tank background!") ![Tank content](tank_content.png "Tank content!")
 
 The widget supports a linear ease-in equation and for animating between set gauge-values. An animations length is determined by a configurable duration. A developer can ask the LinearGauge widget for the position of it's gauge level, in pixels, relative to it's parent container in an effort to provide a visible indicator that exists outside of the widgets container. One way of implementing this could be creating a further specialization, LinearGaugeWithIndicator.
 
 TouchGFX Version
 =================
 
-This widget was tested using TouchGFX version 4.1.1
+This widget was created and tested using TouchGFX version 4.1.1
 
 Functional description
 ======================
