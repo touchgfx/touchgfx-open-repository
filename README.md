@@ -4,15 +4,15 @@ TouchGFX Open Widget Repository
 
 TouchGFX is framework, written in C++, that allows you to create modern, graphical user interfaces on limited-resource embedded systems and allows smartphone-like look and feel on hardware platforms an order of magnitude less powerful than smartphones, e.g. ARM Cortex M3/M4 48-204 MHz.
 
-This repository will eventually contain numerous examples of and ideas for widgets, containers and mixins that cannot be found in the core framework (See documentation link below) that can be used as a source of inspiration for your applications but  will not be maintained across new versions of the framework. 
+This repository will eventually contain numerous examples of and ideas for widgets, containers and mixins that cannot be found in the core framework (See documentation link below) that can be used as a source of inspiration for your applications. None os the content found here is guaranteed to be maintained across new versions of the framework. 
 
-If you're familiar with TouchGFX and you feel that you can add value to this collection, your contributions are more than welcome! Simply fork this repository and create and pull-requests. Each contribution should conform to the following standards:
+If you're familiar with TouchGFX and feel you can add value to this repository of , your contributions are more than welcome! Simply fork this repository and create pull-requests. Each contribution should conform to the following standards:
 
  1. Create a suitable folder inside widgets/ for your contribution
- 2. Supply atleast source- and headerfiles, example code welcome but not necessary
- 2. Supply a screenshot of the widget in action
+ 2. Supply atleast source- and headerfiles, example code welcome but not necessary.
+ 2. Supply one or more screenshot of the widget in action. Graphical components that make up the widget are also welcome for clarity.
  3. Create a *README.md* containing, in markdown:
-   - Purpose of the widget
+   - Purpose of the widget - Any screenshots you may have could be shown here.
    - Version(s) of TouchGFX you've tested your code on
    - Functional description of the widget and it's configuration. Code can be verbatim formatted in .md by indenting with 4 spaces.
 
