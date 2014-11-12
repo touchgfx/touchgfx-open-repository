@@ -17,28 +17,25 @@ This widget was created and tested using TouchGFX version 4.1.1
 Functional description
 ======================
 
-The following exemplifies, with code, how to set up a LinearGauge widget. Once set up, the levels can be controlled by calling  `stepPos()`,  `stepNeg()` which use the configured  `stepSize` (default 1) or  `setGaugeLevel(level)`, where level is within the defined lower and upper bounds of the gauge.
+The following exemplifies, in code, how to set up a LinearGauge widget. Once set up, the level of the gauge can be controlled by calling  `stepPos()` or  `stepNeg()`, which use a configured  `stepSize` (default 1) or  `setGaugeLevel(level)`, where level is within the defined lower and upper bounds of the gauge defined during setup.
 
-    //Set the background - in this case an empty tank container, to be filled by movable content 
+    // Set the background - in this case an empty tank container, to be filled by movable content 
     gauge.setBackground(Bitmap(BITMAP_TANK_ID));
 
-    //Add the content for the tank. Specify internal container offset (5,18), initial value (500), 
-    lower and upper bounds (200-1000) and the direction in which to advance/decline level of the gauge 
-    (VERTICAL_NORTH)
+    // Add the content for the tank. Specify internal container offset (5,18), initial value (500), 
+    // lower and upper bounds (200-1000) and the direction in which to advance/decline level of the gauge 
+    // (VERTICAL_NORTH)
     gauge.setupGauge(Bitmap(BITMAP_TANK_CONTENT_ID), 5, 18, 500, 200, 1000, LinearGauge::VERTICAL_NORTH); 
   
-    //Place the gauge on the screen
+    // Place the gauge on the screen
     gauge.setXY(100,85);   
   
-    //Set step size  to 50. This is only relevant if using the stepPos() and stepNeg() methods 
+    // Set step size  to 50. This is only relevant if using the stepPos() and stepNeg() methods 
     to advance/decline levels. 
     gauge.setStepSize(50);
 
-    //Enable animation between steps/values.
+    // Enable animation between steps/values.
     gauge.enableAnimation(true); 
     
-    //Add widgets
+    // Add widget
     add(gauge);
-    
- 
-
