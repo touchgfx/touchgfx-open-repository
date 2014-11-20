@@ -8,6 +8,8 @@
 using namespace touchgfx;
 
 /**
+ * This widget is part of the TouchGFX Open Widget Repository.
+ *        
  * The purpose of the LinearGauge widget is to provide an application 
  * developer with means of advancing and declining values in a linear, 
  * graphical fashion. Possible directions are: North, South, East, West. 
