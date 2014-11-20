@@ -3,7 +3,7 @@ Purpose
 
 ![example](screenshots/img00.bmp "Example")
 
-The purpose of the Carousel widget is to provide an nice looking carousel functionality that does not use up a lot of MCU resources. 
+The purpose of the Carousel widget is to provide an nice looking carousel functionality that does not use a lot of MCU resources. 
 
 The Carousel widget is hardcoded to 5 visible elements. It should, however, not be a big task to change this number if needed.
 
