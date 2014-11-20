@@ -19,7 +19,9 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 # List of widgets
 
  1. *LinearGauge* (TouchGFX 4.1.1)
-
+ 2. *ExtendedZoomAnimationImage* (TouchGFX 4.1.1)
+ 3. *Carousel* (TouchGFX 4.1.1)
+  
 # Links
 
 * [Website] (http://touchgfx.com)
