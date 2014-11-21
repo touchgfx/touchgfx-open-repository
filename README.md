@@ -2,7 +2,7 @@
 
 TouchGFX is framework, written in C++, that allows you to create modern, graphical user interfaces on limited-resource embedded systems and allows smartphone-like look and feel on hardware platforms an order of magnitude less powerful than smartphones, e.g. ARM Cortex M3/M4 48-204 MHz.
 
-This repository, the *TouchGFX Open Widget Repository*, will eventually contain numerous examples of, and ideas for, widgets, containers and mixins that might not be found in the core framework. They can be used as a source of inspiration for your applications free of charge; However, none os the code in this repository  is guaranteed to be maintained across new versions of TouchGFX. 
+This repository, the *TouchGFX Open Widget Repository*, will eventually contain numerous examples of, and ideas for, widgets, containers and mixins that might not be found in the core framework. They can be used as a source of inspiration for your applications free of charge; However, none of the code in this repository  is guaranteed to be maintained across new versions of TouchGFX. 
 
 This repository would greatly benefit from TouchGFX developers around the world sharing some of their work. Having a solid community that shares complex ideas for TouchGFX widgets is something that can help reduce development time greatly. If you would like to contribute to this repository you can fork and follow the guide below. When done, open a pull request to your branch. Each contribution should conform to the following standards:
 
