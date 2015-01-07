@@ -4,11 +4,13 @@ Purpose
 ![example](screenshots/img00.bmp "Example")
 ![example](screenshots/img01.bmp "Example")
 
-The purpose of the SwipeContainer is to provide an easy way to add swipe functionality to a set of element. 
+The purpose of the SwipeContainer is to provide an easy way to add swipe functionality to a set of elements. 
 
-To use the SwipeContainer simply add equal sized graphical elements to the container and the swipe is ready to use.
+To use the SwipeContainer simply add equal sized graphical elements to the container and the swipe functionality is ready to use.
 The container will display dots to show which screen is showing. When a drag or swipe gesture has been performed 
 the container will animate to the next element or snaps back to the shown element if a too small drag is performed.
+
+The SwipeContainer has some hard coded durations for the animation used. These, as well as the EasingEquations used, can easily be changed in the animate methods.  
 
 Please note that the SwipeContainer uses the DotIndicator.cpp/hpp. This widget can also be found in the TouchGFX Open Widget Repository. This file is included in the SwipeContainer.hpp file and uses the path gui/common/DotIndicator.hpp. If you place the hpp file in a different location simply change the include path as well.
 
@@ -20,7 +22,7 @@ This widget was created and tested using TouchGFX version 4.1.1
 Functional description
 ======================
 
-Example:
+SwipeContainer example:
 
 in xxxView.hpp declare:
 
