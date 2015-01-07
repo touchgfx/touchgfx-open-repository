@@ -8,10 +8,11 @@ using namespace touchgfx;
 /**
  * @class ExtendedZoomAnimationImage
  *
- * @brief This widget is part of the TouchGFX Open Widget Repository.
- *        
- *        Extends the ZoomAnimationImage with an additional bitmap size.
+ * Extends the ZoomAnimationImage with an additional bitmap size.
  *
+ * This widget is part of the TouchGFX Open Widget Repository. 
+ * https://github.com/draupnergraphics/touchgfx-widgets 
+ * 
  * @sa ZoomAnimationImage
  */
 class ExtendedZoomAnimationImage : public ZoomAnimationImage

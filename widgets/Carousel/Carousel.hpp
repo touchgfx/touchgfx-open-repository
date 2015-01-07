@@ -10,22 +10,23 @@ using namespace touchgfx;
 /**
  * @class Carousel
  *
- * @brief This widget is part of the TouchGFX Open Widget Repository.
- *        
- *        Carousel for visually navigating through a set of graphical elements. The current
- *        implementation displays five elements at a time. The carousel has one invisible
- *        element before and one after the visible elements. These are used when fading out the
- *        visible end elements. The visible elements are there for indexed from 1-5 and the
- *        invisible 0 and 6. The implementation can easily be extended to hold more visible
- *        elements. To set up the carousel call setPositionOfCarouselElement for all the
- *        elements including the end invisible elements. With this method you specify the
- *        position and sizes of the images in the carousel. The carousel will animate the
- *        elements between these position and sizes. You can add more elements than there are
- *        visible carousel elements. See MAX_NUMBER_OF_ELEMENTS. For performance reasons the
- *        elements uses an ExtendedZoomAnimationImage that holds three sizes of the images of
- *        the elements. So you have to supply each element in the carousel with three bitmaps
- *        of the element. One for each size of the visible elements. Use addElement(...) for
- *        this.
+ * Carousel for visually navigating through a set of graphical elements. The current
+ * implementation displays five elements at a time. The carousel has one invisible
+ * element before and one after the visible elements. These are used when fading out the
+ * visible end elements. The visible elements are there for indexed from 1-5 and the
+ * invisible 0 and 6. The implementation can easily be extended to hold more visible
+ * elements. To set up the carousel call setPositionOfCarouselElement for all the
+ * elements including the end invisible elements. With this method you specify the
+ * position and sizes of the images in the carousel. The carousel will animate the
+ * elements between these position and sizes. You can add more elements than there are
+ * visible carousel elements. See MAX_NUMBER_OF_ELEMENTS. For performance reasons the
+ * elements uses an ExtendedZoomAnimationImage that holds three sizes of the images of
+ * the elements. So you have to supply each element in the carousel with three bitmaps
+ * of the element. One for each size of the visible elements. Use addElement(...) for
+ * this.
+ * 
+ * This widget is part of the TouchGFX Open Widget Repository. 
+ * https://github.com/draupnergraphics/touchgfx-widgets  
  *
  * @sa Container
  */
@@ -97,7 +98,7 @@ public:
      *
      * @return the ExtendedZoomAnimationImage of selected element.
      */
-    virtual ExtendedZoomAnimationImage* getSelectedElement() const { return (ExtendedZoomAnimationImage*) &(visibleElements[selectedElement]); }
+    virtual ExtendedZoomAnimationImage* getSelectedElement() { return static_cast<ExtendedZoomAnimationImage*> (&(visibleElements[selectedElement])); }
 
     /**
      * @fn virtual uint8_t Carousel::getSelectedElementIndex() const

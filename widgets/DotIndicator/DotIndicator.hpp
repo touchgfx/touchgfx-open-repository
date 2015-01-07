@@ -7,7 +7,14 @@
 using namespace touchgfx;
 
 /**
+ * @class DotIndicator
+ *
  * DotIndicator shows a number of small dots where one of the dots is highlighted.
+ *
+ * This widget is part of the TouchGFX Open Widget Repository. 
+ * https://github.com/draupnergraphics/touchgfx-widgets  
+ *
+ * @sa DotIndicator
  */
 class DotIndicator : public Container
 {

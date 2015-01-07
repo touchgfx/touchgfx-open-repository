@@ -21,6 +21,8 @@ On the TouchGFX website you can request a full evaluation version of the framewo
  1. *LinearGauge* (TouchGFX 4.1.1)
  2. *ExtendedZoomAnimationImage* (TouchGFX 4.1.1)
  3. *Carousel* (TouchGFX 4.1.1)
+ 4. *DotIndicator* (TouchGFX 4.1.1)
+ 5. *SwipeContainer* (TouchGFX 4.1.1)
   
 # Links
 
