@@ -196,7 +196,7 @@ void Carousel::handleZoomAnimationEvent(const ZoomAnimationImage& element)
 void Carousel::updateVisibleElements()
 {
     // Update the visibleElements to match the new selected element
-    uint8_t currentElement = prevElement(prevElement(selectedElement));
+    uint8_t currentElement = prevElement(prevElement(prevElement(selectedElement)));
 
     for (uint8_t i = 0; i < NUMBER_OF_VISIBLE_ELEMENTS; i++)
     {
