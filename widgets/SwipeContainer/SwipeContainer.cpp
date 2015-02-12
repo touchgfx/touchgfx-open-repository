@@ -1,18 +1,20 @@
 #include <gui/common/SwipeContainer.hpp>
 #include <touchgfx/EasingEquations.hpp>
-#include "BitmapDatabase.hpp"
-#include <touchgfx/Color.hpp>
 
 using namespace touchgfx;
 
 SwipeContainer::SwipeContainer() :
+    Container(),
     currentState(NO_ANIMATION),
     numberOfScreens(0),
     animationCounter(0),
     swipeCutoff(80),
     dragX(0),
+    animateDistance(0),
+    startX(0),
     currentScreen(0),
     endElasticWidth(30),
+    dotIndicator(),
     screens(EAST)
 {
     touchgfx::Application::getInstance()->registerTimerWidget(this);
@@ -28,13 +30,12 @@ SwipeContainer::~SwipeContainer()
     touchgfx::Application::getInstance()->unregisterTimerWidget(this);
 }
 
-
 void SwipeContainer::add(Drawable& screen)
 {
     screens.add(screen);
     numberOfScreens++;
 
-    dotIndicator.setNumberOfDots(numberOfScreens);   
+    dotIndicator.setNumberOfDots(numberOfScreens);
 
     setWidth(screen.getWidth());
     setHeight(screen.getHeight());
@@ -55,12 +56,12 @@ void SwipeContainer::setDotIndicatorBitmaps(const touchgfx::Bitmap& normalDot, c
     dotIndicator.setBitmaps(normalDot, highlightedDot);
 }
 
-void SwipeContainer::setDotIndicatorXY(uint16_t x, uint16_t y)
+void SwipeContainer::setDotIndicatorXY(int16_t x, int16_t y)
 {
     dotIndicator.setXY(x, y);
 }
 
-void SwipeContainer::setDotIndicatorXYWithCenteredX(uint16_t x, uint16_t y)
+void SwipeContainer::setDotIndicatorXYWithCenteredX(int16_t x, int16_t y)
 {
     dotIndicator.setXY(x - dotIndicator.getWidth() / 2, y);
 }
@@ -146,11 +147,11 @@ void SwipeContainer::handleDragEvent(const DragEvent& evt)
     // Do not show too much background next to end screens
     if (currentScreen == 0 && dragX > endElasticWidth)
     {
-        dragX = endElasticWidth;
+        dragX = static_cast<int16_t>(endElasticWidth);
     }
     else if (currentScreen == getNumberOfScreens()-1 && dragX < -endElasticWidth)
     {
-        dragX = -endElasticWidth;
+        dragX = -static_cast<int16_t>(endElasticWidth);
     }
 
     adjustScreens();
@@ -183,7 +184,7 @@ void SwipeContainer::handleGestureEvent(const GestureEvent& evt)
 
 void SwipeContainer::adjustScreens()
 {
-    screens.moveTo(-(currentScreen * getWidth()) + dragX, 0);
+    screens.moveTo(-static_cast<int16_t>(currentScreen * getWidth()) + dragX, 0);
 }
 
 void SwipeContainer::animateSwipeCancelledLeft()
