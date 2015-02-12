@@ -1,18 +1,18 @@
 #include <gui/common/DotIndicator.hpp>
-#include <BitmapDatabase.hpp>
 #include <assert.h>
 
-
 DotIndicator::DotIndicator() :
+    Container(),
     unselectedDots(touchgfx::EAST),
+    dotHighlighted(),
     numberOfDots(0),
     currentDot(0)
 {
     unselectedDots.setXY(0, 0);
     dotHighlighted.setXY(0, 0);
 
-    add(unselectedDots);
-    add(dotHighlighted);
+    this->add(unselectedDots);
+    this->add(dotHighlighted);
 }
 
 DotIndicator::~DotIndicator()
@@ -23,8 +23,8 @@ void DotIndicator::setNumberOfDots(uint8_t size)
 {
     numberOfDots = size;
 
-    assert(numberOfDots > 0 && "At least one dot is needed");
-    assert(numberOfDots <= MAX_SIZE && "Above maximum number of dots");
+    assert(numberOfDots > 0 && "At least one dot is needed"); /*lint !e920 Ignore lint error in Visual Studio implementation of assert(...) */
+    assert(numberOfDots <= MAX_SIZE && "Above maximum number of dots"); /*lint !e920 Ignore lint error in Visual Studio implementation of assert(...) */
 
     unselectedDots.removeAll();
     for (int i = 0; i < numberOfDots; i++)
@@ -65,7 +65,7 @@ void DotIndicator::setHighlightPosition(uint8_t index)
     // note that index is unsigned
     if (index < numberOfDots)
     {
-        dotHighlighted.setX(index*dotNormal[0].getWidth());
+        dotHighlighted.setX( static_cast<int16_t>(index * dotNormal[0].getWidth()) );
     }
     invalidate();
 }

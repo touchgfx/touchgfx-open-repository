@@ -2,8 +2,6 @@
 #define SWIPE_CONTAINER_HPP
 
 #include <touchgfx/containers/Container.hpp>
-#include <touchgfx/widgets/Image.hpp>
-#include <touchgfx/containers/Container.hpp>
 #include <touchgfx/containers/ListLayout.hpp>
 #include <gui/common/DotIndicator.hpp>
 
@@ -53,17 +51,17 @@ public:
     virtual void setSwipeCutoff(uint16_t cutoff);
 
     /**
-     * @fn void SwipeContainer::setDotIndicatorXY(uint16_t x, uint16_t y);
+     * @fn void SwipeContainer::setDotIndicatorXY(int16_t x, int16_t y);
      *
      * @brief Sets the x and y position of the dot indicator.
      *
      * @param x The x coordinate.
      * @param y The y coordinate.
      */
-    void setDotIndicatorXY(uint16_t x, uint16_t y);
+    void setDotIndicatorXY(int16_t x, int16_t y);
 
     /**
-     * @fn void SwipeContainer::setDotIndicatorXYWithCenteredX(uint16_t x, uint16_t y);
+     * @fn void SwipeContainer::setDotIndicatorXYWithCenteredX(int16_t x, int16_t y);
      *
      * @brief Sets the x and y position of the dot indicator. The value specified as x
      *        will be the center coordinate of the dot indicators.
@@ -73,7 +71,7 @@ public:
      * @param x The center x coordinate.
      * @param y The y coordinate.
      */
-    void setDotIndicatorXYWithCenteredX(uint16_t x, uint16_t y);
+    void setDotIndicatorXYWithCenteredX(int16_t x, int16_t y);
 
     /**
      * @fn void SwipeContainer::setDotIndicatorBitmaps(const touchgfx::Bitmap& normalDot, const touchgfx::Bitmap& highlightedDot);
