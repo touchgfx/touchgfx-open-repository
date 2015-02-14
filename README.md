@@ -1,4 +1,4 @@
-# <img src="http://touchgfx.com/static/touchgfx_logo_open_widget_rep_small.png" width="500" height="135">
+# <img src="http://touchgfx.com/static/touchgfx_logo_open_rep_small.png" width="500" height="135">
 
 TouchGFX is framework, written in C++, that allows you to create modern, graphical user interfaces on limited-resource embedded systems and allows smartphone-like look and feel on hardware platforms an order of magnitude less powerful than smartphones, e.g. ARM Cortex M3/M4 48-204 MHz.
 
