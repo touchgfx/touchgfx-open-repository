@@ -76,3 +76,4 @@ private:
 };
 
 #endif /* DOTINDICATOR_HPP_ */
+
