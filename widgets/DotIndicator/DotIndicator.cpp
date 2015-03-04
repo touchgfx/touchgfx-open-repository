@@ -65,6 +65,7 @@ void DotIndicator::setHighlightPosition(uint8_t index)
     // note that index is unsigned
     if (index < numberOfDots)
     {
+        currentDot = index;
         dotHighlighted.setX( static_cast<int16_t>(index * dotNormal[0].getWidth()) );
     }
     invalidate();
