@@ -1,7 +1,7 @@
 Purpose
 ========
 
-![No pressure](GaugeEmpty.png "No pressuer!") ![Some pressure!](GaugePressure.png "Some pressure!")
+![No pressure](GaugeEmpty.png "No pressure!") ![Some pressure!](GaugePressure.png "Some pressure!")
 
 The purpose of the Gauge widget is to provide an application developer with means of advancing and declining values in a circulare, graphical fashion. The application developer supplies a background image for the gauge as well as an image of the center of the gauge. Two such images can be seen below, as an exmaple, but they are not a part of the `LinearGauge` widget and it is purely up to the application developer to provide the graphics.
 
