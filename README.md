@@ -23,7 +23,8 @@ On the TouchGFX website you can request a full evaluation version of the framewo
  3. *Carousel* (TouchGFX 4.1.1)
  4. *DotIndicator* (TouchGFX 4.1.1)
  5. *SwipeContainer* (TouchGFX 4.1.1)
- 5. *Gauge* (TouchGFX 4.2)
+ 6. *Gauge* (TouchGFX 4.2)
+ 7. *WheelSelector* (TouchGFX 4.2)
   
 # Links
 
