@@ -3,7 +3,7 @@ Purpose
 
 ![Empty](0_percent.png "0%") ![In Progress](example.png "Example") ![Full](100_percent.png "100%")
 
-The purpose of the CircularProgress widget is to provide an application developer with means presenting a progress indicator with nice gradient, circular graphics. For example purposes, the CircularProgress class also accepts touch events and will set the current progress to the calculated progress for the corresponding touch coordinates.
+The purpose of the CircularProgress widget is to provide an application developer with means to present a progress indicator with nice gradient, circular graphics. For example purposes, the CircularProgress class also accepts touch events to set the progress value.
 
 TouchGFX Version
 =================
