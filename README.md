@@ -18,9 +18,9 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 
 # List of widgets
 
- 1. *LinearGauge* (TouchGFX 4.1.1) ![Tank low!](widgets/LinearGauge/LinearGauge_low.png "Tank low!")
+ 1. *LinearGauge* (TouchGFX 4.1.1) ![Linear Gauge!](widgets/LinearGauge/LinearGaugeThumbnail.png "Linear Gauge!")
  2. *ExtendedZoomAnimationImage* (TouchGFX 4.1.1)
- 3. *Carousel* (TouchGFX 4.1.1)
+ 3. *Carousel* (TouchGFX 4.1.1) ![Carousel!](widgets/Carousel/carouselThumbnail.bmp "Carousel")
  4. *DotIndicator* (TouchGFX 4.1.1)
  5. *SwipeContainer* (TouchGFX 4.1.1)
  6. *Gauge* (TouchGFX 4.2)
