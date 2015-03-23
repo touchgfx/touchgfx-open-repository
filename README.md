@@ -25,13 +25,13 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 | col 3 is | right-aligned |    $1 |
 
 
- | 1. *LinearGauge* (TouchGFX 4.1.1) ![Linear Gauge!](widgets/LinearGauge/LinearGaugeThumbnail.png "Linear Gauge!") | 2. *ExtendedZoomAnimationImage* (TouchGFX 4.1.1) |  3. *Carousel* (TouchGFX 4.1.1) ![Carousel!](widgets/Carousel/screenshots/carouselThumbnail.bmp "Carousel") |
- |------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|-------------------------------------------------------------------------------------------------|
- | 4. *DotIndicator* (TouchGFX 4.1.1) | 5. *SwipeContainer* (TouchGFX 4.1.1) | 6. *Gauge* (TouchGFX 4.2) |
- |------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|-------------------------------------------------------------------------------------------------|
- | 7. *WheelSelector* (TouchGFX 4.2) | 8. *CircularProgress* (TouchGFX 4.2)|
- |------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|-------------------------------------------------------------------------------------------------|
+ | LinearGauge (TouchGFX 4.1.1) ![Linear Gauge!](widgets/LinearGauge/LinearGaugeThumbnail.png "Linear Gauge!")      | ExtendedZoomAnimationImage (TouchGFX 4.1.1)      |  Carousel (TouchGFX 4.1.1) ![Carousel!](widgets/Carousel/screenshots/carouselThumbnail.bmp "Carousel") |
+ |------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+ | DotIndicator (TouchGFX 4.1.1) | SwipeContainer* (TouchGFX 4.1.1) | Gauge (TouchGFX 4.2) |
+ |------------------------------------------------------------------------------------------------------------------|--------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+ | WheelSelector (TouchGFX 4.2) | CircularProgress (TouchGFX 4.2)| |
 
+ 
 # Links
 
 * [Website] (http://touchgfx.com)
