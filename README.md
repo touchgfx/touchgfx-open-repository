@@ -20,18 +20,18 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 
 <table style="width:100%">
   <tr>
-    <td>LinearGauge <p style="font-size: xx-small; display: inline;">(TouchGFX 4.1.1)</p> <br> <img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
-    <td>ExtendedZoomAnimationImage (TouchGFX 4.1.1)</td> 
-    <td>Carousel (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
+    <td>LinearGauge <br>TouchGFX 4.1.1<br><img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
+    <td>ExtendedZoomAnimationImage <br>TouchGFX 4.1.1<br> </td> 
+    <td>Carousel <br>TouchGFX 4.1.1<br><img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
   </tr>
   <tr>
-    <td>DotIndicator (TouchGFX 4.1.1)</td>
-    <td>SwipeContainer (TouchGFX 4.1.1)</td> 
-    <td>Gauge (TouchGFX 4.2)</td>
+    <td>DotIndicator <br>TouchGFX 4.1.1<br><img src="widgets/DotIndicator/screenshots/img00.bmp" height="100"></td>
+    <td>SwipeContainer <br>TouchGFX 4.1.1<br><img src="widgets/SwipeContainer/screenshots/img01.bmp" height="100"></td> 
+    <td>Gauge <br>TouchGFX 4.2<br><img src="widgets/Gauge/GaugePressure.png" height="100"></td>
   </tr>
   <tr>
-    <td>WheelSelector (TouchGFX 4.2)</td>
-    <td>CircularProgress (TouchGFX 4.2)  <img src="widgets/CircularProgress/example.png" height="100"> </td> 
+    <td>WheelSelector <br>TouchGFX 4.2<br><img src="widgets/WheelSelector/days_fade_in.png" height="100"></td>
+    <td>CircularProgress <br>TouchGFX 4.2<br><img src="widgets/CircularProgress/example.png" height="100"> </td> 
     <td></td>
   </tr>
 </table>
