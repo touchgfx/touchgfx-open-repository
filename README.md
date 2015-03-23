@@ -7,7 +7,7 @@ This repository, the *TouchGFX Open Repository*, contains numerous examples of, 
 This repository would greatly benefit from TouchGFX developers around the world sharing some of their work. Having a solid community that shares complex ideas for TouchGFX widgets is something that can help reduce development time greatly. If you would like to contribute to this repository you can fork and follow the guide below. When done, open a pull request to your branch. Each contribution should conform to the following standards:
 
  1. Create a suitable folder inside widgets/ for your contribution
- 2. Supply atleast source- and headerfiles, example code welcome but not necessary.
+ 2. Supply at least source- and headerfiles, example code welcome but not necessary.
  2. Supply one or more screenshot of the widget in action. Graphical components that make up the widget are also welcome for clarity.
  3. Create a *README.md* containing, in markdown:
    - Purpose of the widget - Any screenshots you may have could be shown here.
@@ -16,11 +16,14 @@ This repository would greatly benefit from TouchGFX developers around the world 
 
 On the TouchGFX website you can request a full evaluation version of the framework as well as order commercial licenses. Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
 
-# List of widgets
+# Table of Components
+
+In the following table you can see the name, associated TouchGFX version, and preview of each of the TouchGFX graphical components in this repository. 
+The associated TouchGFX version is the version that the component has been tested on. Components will most likely also work on later versions of TouchGFX. 
 
 <table style="width:100%">
   <tr>
-    <td><b>LinearGauge</b> <br>TouchGFX 4.1.1<br><img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
+    <td>LinearGauge <br>TouchGFX 4.1.1<br><img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
     <td>ExtendedZoomAnimationImage <br>TouchGFX 4.1.1<br> </td> 
     <td>Carousel <br>TouchGFX 4.1.1<br><img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
   </tr>
