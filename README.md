@@ -24,7 +24,7 @@ The TouchGFX version stated is the version that the component has been tested wi
 
 <table style="width:100%">
   <tr>
-    <td>LinearGauge <br>TouchGFX 4.1.1<br><a href="/draupnergraphics/touchgfx-open-repository/blob/master/widgets/LinearGauge/"><img src="/draupnergraphics/touchgfx-open-repository/raw/master/widgets/LinearGauge/LinearGaugeThumbnail.png" height="100" style="max-width:100%;"></a></td>
+    <td>LinearGauge <br>TouchGFX 4.1.1<br><a href="widgets/LinearGauge/"><img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100" style="max-width:100%;"></a></td>
     <td>ExtendedZoomAnimationImage <br>TouchGFX 4.1.1<br><img src="widgets/ExtendedZoomAnimationImage/screenshots/imgThumbnail.png" height="100"></td> 
     <td>Carousel <br>TouchGFX 4.1.1<br><img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
   </tr>
