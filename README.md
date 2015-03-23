@@ -20,7 +20,7 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 
 <table style="width:100%">
   <tr>
-    <td>LinearGauge <small>(TouchGFX 4.1.1)</small> <br> <img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
+    <td>--LinearGauge <small>(TouchGFX 4.1.1)</small> <br> <img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
     <td>ExtendedZoomAnimationImage (TouchGFX 4.1.1)</td> 
     <td>Carousel (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
   </tr>
