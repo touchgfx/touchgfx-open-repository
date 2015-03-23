@@ -19,8 +19,8 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 # List of widgets
 
 
-|:----------|:-------------|:------|
-| LinearGauge (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp">| ExtendedZoomAnimationImage (TouchGFX 4.1.1)      |  Carousel (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp"> |
+|:----------:|:-------------:|:------:|
+| LinearGauge (TouchGFX 4.1.1) | ExtendedZoomAnimationImage (TouchGFX 4.1.1)      |  Carousel (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" width="70" height="35"> |
 | DotIndicator (TouchGFX 4.1.1) | SwipeContainer* (TouchGFX 4.1.1) | Gauge (TouchGFX 4.2) |
 | WheelSelector (TouchGFX 4.2) | CircularProgress (TouchGFX 4.2)| |
 
