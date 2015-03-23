@@ -20,7 +20,7 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 
 <table style="width:100%">
   <tr>
-    <td>--LinearGauge <small>(TouchGFX 4.1.1)</small> <br> <img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
+    <td>LinearGauge (TouchGFX 4.1.1) <br> <img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
     <td>ExtendedZoomAnimationImage (TouchGFX 4.1.1)</td> 
     <td>Carousel (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
   </tr>
@@ -28,6 +28,11 @@ On the TouchGFX website you can request a full evaluation version of the framewo
     <td>DotIndicator (TouchGFX 4.1.1)</td>
     <td>SwipeContainer (TouchGFX 4.1.1)</td> 
     <td>Gauge (TouchGFX 4.2)</td>
+  </tr>
+  <tr>
+    <td>WheelSelector (TouchGFX 4.2)</td>
+    <td>CircularProgress (TouchGFX 4.2)  <img src="widgets/CircularProgress/example.png" height="100"> </td> 
+    <td></td>
   </tr>
 </table>
 
