@@ -49,6 +49,7 @@ The associated TouchGFX version is the version that the component has been teste
 
 * [TouchGFX Demo on STM32F429 Evaluation Board 4.3"](http://www.youtube.com/watch?v=QcKX_Pc6ldU)
 * [TouchGFX Demo on STM32F429 Discovery Board 2.4"](http://www.youtube.com/watch?v=j-fgE1hOlbo)
+* [TouchGFX Demo on Embedded Artists LPC4088 Display Module 4.3"](https://www.youtube.com/watch?v=g_GjiUXrIc8)
 * [TouchGFX Demo on Embedded Artists LPC4357 DevKit 4.3"](http://www.youtube.com/watch?v=OzRpGLfjh1c)
 * [TouchGFX Demo on TouchGFX Demo Board NXP 4357 4.3"](http://www.youtube.com/watch?v=dvSK0oXQqfA)
 
