@@ -18,14 +18,14 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 
 # Table of Components
 
-In the following table you can see the name, associated TouchGFX version, and preview of each of the TouchGFX graphical components in this repository. 
+In the following table you can see the name, TouchGFX version, and preview of each of the TouchGFX graphical components in this repository. 
 
-The associated TouchGFX version is the version that the component has been tested on. Components will most likely also work on later versions of TouchGFX. 
+The TouchGFX version stated is the version that the component has been tested with. All components are expected to work with later versions of TouchGFX as well, however, this is not guaranteed. 
 
 <table style="width:100%">
   <tr>
     <td>LinearGauge <br>TouchGFX 4.1.1<br><img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
-    <td>ExtendedZoomAnimationImage <br>TouchGFX 4.1.1<br> </td> 
+    <td>ExtendedZoomAnimationImage <br>TouchGFX 4.1.1<br><img src="widgets/ExtendedZoomAnimationImage/screenshots/imgThumbnail.bmp" height="100"></td> 
     <td>Carousel <br>TouchGFX 4.1.1<br><img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
   </tr>
   <tr>
