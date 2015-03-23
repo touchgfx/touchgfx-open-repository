@@ -2,13 +2,13 @@
 
 TouchGFX is framework, written in C++, that allows you to create modern, graphical user interfaces on limited-resource embedded systems and allows smartphone-like look and feel on hardware platforms an order of magnitude less powerful than smartphones, e.g. ARM Cortex M3/M4 48-204 MHz.
 
-This repository, the *TouchGFX Open Repository*, contains numerous examples of, and ideas for, graphical components such as widgets, containers and mixins that are not part of the core framework. They can be used as a source of inspiration for your applications free of charge; The components are all generalized to some extend but probably needs some sort of fine tuning to match your specific needs. PLease not that none of the components are guaranteed to be maintained across new versions of TouchGFX. 
+This repository, the *TouchGFX Open Repository*, contains numerous examples of, and ideas for, graphical components such as widgets, containers and mixins that are not part of the core framework. They can be used as a source of inspiration for your applications free of charge; The components are all generalized to some extent but probably needs some sort of fine tuning to match your specific needs. Please note that none of the components are guaranteed to be maintained across new versions of TouchGFX. 
 
 This repository would greatly benefit from TouchGFX developers around the world sharing some of their work. Having a solid community that shares complex ideas for TouchGFX widgets is something that can help reduce development time greatly. If you would like to contribute to this repository you can fork and follow the guide below. When done, open a pull request to your branch. Each contribution should conform to the following standards:
 
  1. Create a suitable folder inside widgets/ for your contribution
  2. Supply at least source- and headerfiles, example code welcome but not necessary.
- 2. Supply one or more screenshot of the widget in action. Graphical components that make up the widget are also welcome for clarity.
+ 2. Supply one or more screenshots of the widget in action. Graphical components that make up the widget are also welcome for clarity.
  3. Create a *README.md* containing, in markdown:
    - Purpose of the widget - Any screenshots you may have could be shown here.
    - Version(s) of TouchGFX you've tested your code on
@@ -16,15 +16,15 @@ This repository would greatly benefit from TouchGFX developers around the world 
 
 On the TouchGFX website you can request a full evaluation version of the framework as well as order commercial licenses. Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
 
-# Table of Components
+# List of Components
 
-In the following table you can see the name, TouchGFX version, and preview of each of the TouchGFX graphical components in this repository. 
+In the following table you can see the name, TouchGFX version, and a preview of the TouchGFX graphical components in this repository. 
 
 The TouchGFX version stated is the version that the component has been tested with. All components are expected to work with later versions of TouchGFX as well, however, this is not guaranteed. 
 
 <table style="width:100%">
   <tr>
-    <td>LinearGauge <br>TouchGFX 4.1.1<br><img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100"></td>
+    <td>LinearGauge <br>TouchGFX 4.1.1<br><a href="/draupnergraphics/touchgfx-open-repository/blob/master/widgets/LinearGauge/"><img src="/draupnergraphics/touchgfx-open-repository/raw/master/widgets/LinearGauge/LinearGaugeThumbnail.png" height="100" style="max-width:100%;"></a></td>
     <td>ExtendedZoomAnimationImage <br>TouchGFX 4.1.1<br><img src="widgets/ExtendedZoomAnimationImage/screenshots/imgThumbnail.png" height="100"></td> 
     <td>Carousel <br>TouchGFX 4.1.1<br><img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
   </tr>
@@ -59,7 +59,7 @@ The TouchGFX version stated is the version that the component has been tested wi
 
 # Licensing
 
-All widgets, containers and mixins found in this repository are free software for both commercial and non-commericial use. You may use, copy, redistribute and modify the files as needed. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+All widgets, containers and mixins found in this repository are free software for both commercial and non-commericial use. You may use, copy, redistribute and modify the files as needed. The code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
 # Ownership
 
