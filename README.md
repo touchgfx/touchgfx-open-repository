@@ -18,15 +18,9 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 
 # List of widgets
 
-| Tables   |      Are      |  Cool |
-|----------|:-------------:|------:|
-| col 1 is |  left-aligned | $1600 |
-| col 2 is |    centered   |   $12 |
-| col 3 is | right-aligned |    $1 |
 
-| Tables   |      Are      |  Cool | 
-|----------|:-------------:|------:|
-| LinearGauge (TouchGFX 4.1.1) | ExtendedZoomAnimationImage (TouchGFX 4.1.1)      |  Carousel (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" width="70" height="35"> |
+|:----------|:-------------|:------|
+| LinearGauge (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp">| ExtendedZoomAnimationImage (TouchGFX 4.1.1)      |  Carousel (TouchGFX 4.1.1) <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp"> |
 | DotIndicator (TouchGFX 4.1.1) | SwipeContainer* (TouchGFX 4.1.1) | Gauge (TouchGFX 4.2) |
 | WheelSelector (TouchGFX 4.2) | CircularProgress (TouchGFX 4.2)| |
 
