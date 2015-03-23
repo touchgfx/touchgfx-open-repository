@@ -19,6 +19,7 @@ On the TouchGFX website you can request a full evaluation version of the framewo
 # Table of Components
 
 In the following table you can see the name, associated TouchGFX version, and preview of each of the TouchGFX graphical components in this repository. 
+
 The associated TouchGFX version is the version that the component has been tested on. Components will most likely also work on later versions of TouchGFX. 
 
 <table style="width:100%">
