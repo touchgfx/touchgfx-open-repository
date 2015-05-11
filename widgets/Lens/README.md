@@ -5,9 +5,9 @@ Purpose
 
 The purpose of the Lens is to provide an effect on top of already existing graphics. The lens will distort the contents below it. 
 
-The lens has a radius of 100. This number can be adjusted. Additional image data may be needed.
+The lens has a radius of 100. This number can be adjusted. 
 
-The lens adds an image of a semi transparent glass on top of the distorted graphics.
+The lens adds an image of a semi transparent glass on top of the distorted graphics. If the radius of the lens is adjusted, additional image data may be needed for the glass.
 
 ![glass](assets/lens_image.png "Glass")
 
