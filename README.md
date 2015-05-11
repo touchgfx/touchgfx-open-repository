@@ -25,17 +25,17 @@ The TouchGFX version stated is the version that the component has been tested wi
 <table style="width:100%">
   <tr>
     <td>LinearGauge <br>TouchGFX 4.1.1<br><a href="widgets/LinearGauge/"><img src="widgets/LinearGauge/LinearGaugeThumbnail.png" height="100" style="max-width:100%;"></a></td>
-    <td>ExtendedZoomAnimationImage <br>TouchGFX 4.1.1<br><img src="widgets/ExtendedZoomAnimationImage/screenshots/imgThumbnail.png" height="100"></td> 
-    <td>Carousel <br>TouchGFX 4.1.1<br><img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></td>
+    <td>ExtendedZoomAnimationImage <br>TouchGFX 4.1.1<br> <a href="widgets/ExtendedZoomAnimationImage/"> <img src="widgets/ExtendedZoomAnimationImage/screenshots/imgThumbnail.png" height="100"></a></td> 
+    <td>Carousel <br>TouchGFX 4.1.1<br> <a href="widgets/Carousel/"> <img src="widgets/Carousel/screenshots/carouselThumbnail.bmp" height="100"></a></td>
   </tr>
   <tr>
-    <td>DotIndicator <br>TouchGFX 4.1.1<br><img src="widgets/DotIndicator/screenshots/img00.bmp" height="100"></td>
-    <td>SwipeContainer <br>TouchGFX 4.1.1<br><img src="widgets/SwipeContainer/screenshots/img01.bmp" height="100"></td> 
-    <td>Gauge <br>TouchGFX 4.2<br><img src="widgets/Gauge/GaugePressure.png" height="100"></td>
+    <td>DotIndicator <br>TouchGFX 4.1.1<br>  <a href="widgets/DotIndicator/"> <img src="widgets/DotIndicator/screenshots/img00.bmp" height="100"></a></td>
+    <td>SwipeContainer <br>TouchGFX 4.1.1<br> <a href="widgets/SwipeContainer/"> <img src="widgets/SwipeContainer/screenshots/img01.bmp" height="100"></a></td> 
+    <td>Gauge <br>TouchGFX 4.2<br> <a href="widgets/Gauge/"> <img src="widgets/Gauge/GaugePressure.png" height="100"></a></td>
   </tr>
   <tr>
-    <td>WheelSelector <br>TouchGFX 4.2<br><img src="widgets/WheelSelector/days_fade_in.png" height="100"></td>
-    <td>CircularProgress <br>TouchGFX 4.2<br><img src="widgets/CircularProgress/example.png" height="100"> </td> 
+    <td>WheelSelector <br>TouchGFX 4.2<br> <a href="widgets/WheelSelector/"> <img src="widgets/WheelSelector/days_fade_in.png" height="100"></a></td>
+    <td>CircularProgress <br>TouchGFX 4.2<br> <a href="widgets/CircularProgress/"> <img src="widgets/CircularProgress/example.png" height="100"></a></td> 
     <td>Lens <br>TouchGFX 4.2 <br><a href="widgets/Lens/"><img src="widgets/Lens/screenshots/lens-effect.png" height="100"></a></td>
   </tr>
 </table>
