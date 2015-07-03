@@ -12,12 +12,13 @@
 using namespace touchgfx;
 
 /**
- * @class Graph Graph.hpp gui/common/Graph.hpp
+ * @class Graph
  *
- * @brief A graph with line, area below and dots.
+ * @brief A connected line graph.
  *        
- *        A graph with line, area below and dots. To save space, the 4 graph components are
- *        linked to share the same memory for graph points.
+ *        A connected line graph. The graph is limited to integer values for x and y and the
+ *        values should not exceed 1000. If other values are needed they should be 
+ *        transformed/scaled to be in the interval [0;1000] before added to the graph.
  *
  * @sa Container
  */
