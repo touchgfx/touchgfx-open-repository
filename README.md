@@ -36,7 +36,12 @@ The TouchGFX version stated is the version that the component has been tested wi
   <tr>
     <td>WheelSelector <br>TouchGFX 4.2<br> <a href="widgets/WheelSelector/"> <img src="widgets/WheelSelector/days_fade_in.png" height="100"></a></td>
     <td>CircularProgress <br>TouchGFX 4.2<br> <a href="widgets/CircularProgress/"> <img src="widgets/CircularProgress/example.png" height="100"></a></td> 
-    <td>Graph <br>TouchGFX 4.3<br> <a href="widgets/Graph/"> <img src="widgets/Graph/screenshots/img00.bmp" height="100"></a></td>
+    <td>Lens <br>TouchGFX 4.2 <br><a href="widgets/Lens/"><img src="widgets/Lens/screenshots/lens-effect.png" height="100"></a></td>
+  </tr>
+  <tr>
+    <td>Graph <br>TouchGFX 4.3<br> <a href="widgets/Graph/"> <img src="widgets/Graph/screenshots/img00.bmp" height="100"></a></td>  
+    <td></td>
+    <td></td>
   </tr>
 </table>
  
