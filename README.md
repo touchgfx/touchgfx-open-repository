@@ -16,6 +16,8 @@ This repository would greatly benefit from TouchGFX developers around the world 
 
 On the TouchGFX website you can request a full evaluation version of the framework as well as order commercial licenses. Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
 
+Read Full License Terms document <a href="license.txt">here</a>.
+
 # List of Components
 
 In the following table you can see the name, TouchGFX version, and a preview of the TouchGFX graphical components in this repository. 
@@ -62,9 +64,11 @@ The TouchGFX version stated is the version that the component has been tested wi
 
 <img align="left" src="http://touchgfx.com/static/touchgfx_demos.png">
 
-# Licensing
+# License Terms
 
-All widgets, containers and mixins found in this repository are free software for both commercial and non-commericial use. You may use, copy, redistribute and modify the files as needed. The code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+All software, including widgets, containers and mixins and codes found in this repository (hereinafter referred to collectively as the “Software”) are available to download free of charge and the Software may be used for both commercial and non-commercial purposes. You may use, copy, redistribute and modify the Software as needed. The code is distributed in the hope that it will be useful. 
+
+Read Full License Terms document <a href="license.txt">here</a>. 
 
 # Ownership
 
