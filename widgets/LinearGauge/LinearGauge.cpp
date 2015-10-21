@@ -176,7 +176,7 @@ void LinearGauge::stepPos()
 
 void LinearGauge::stepNeg()
 {
-  if(currentVal-stepSize >= 0 )
+  if(currentVal-stepSize >= lowerBound )
   {
     currentVal-=stepSize;
   }
