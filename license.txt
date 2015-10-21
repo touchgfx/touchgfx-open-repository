@@ -1,28 +1,5 @@
 TOUCHGFX OPEN REPOSITORY
 
-
-”Terms for Contributions
-
-By submitting a contribution to Draupner Graphics A/S you are accepting to be 
-bound by the following Terms for Contributions: 
-
-Draupner Graphics A/S shall, free of charge, be entitled to use any or all parts 
-of the contribution in any way that Draupner Graphics A/S in its sole discretion 
-finds appropriate. This inter alia means that Draupner Graphics A/S is entitled 
-to use the contribution without any form of restriction both commercially and 
-non-commercially, and Draupner Graphics A/S may copy, modify, merge, publish, 
-distribute, sublicense, and/or sell any or all parts of the contribution, and permit 
-persons to whom the contribution may be furnished to do so.  
-
-Draupner Graphics A/S can only accept contributions that are lawfully submitted to 
-Draupner Graphics A/S, which inter alia means that a contribution must not infringe 
-upon the rights of any third party. It is your responsibility – as the contributing 
-party – that your contribution does not infringe upon the rights of any third party. 
-
-These Terms for Contributions are governed by Danish law and any dispute relating 
-hereto shall be under the exclusive jurisdiction of the Danish courts.”
-
-
 ”License Terms
 
 All software, including widgets, containers and mixins and codes found in this 
@@ -53,3 +30,25 @@ intellectual property rights.
 
 These License Terms are governed by Danish law and any dispute relating hereto shall be 
 under the exclusive jurisdiction of the Danish courts.”
+
+
+”Terms for Contributions
+
+By submitting a contribution to Draupner Graphics A/S you are accepting to be 
+bound by the following Terms for Contributions: 
+
+Draupner Graphics A/S shall, free of charge, be entitled to use any or all parts 
+of the contribution in any way that Draupner Graphics A/S in its sole discretion 
+finds appropriate. This inter alia means that Draupner Graphics A/S is entitled 
+to use the contribution without any form of restriction both commercially and 
+non-commercially, and Draupner Graphics A/S may copy, modify, merge, publish, 
+distribute, sublicense, and/or sell any or all parts of the contribution, and permit 
+persons to whom the contribution may be furnished to do so.  
+
+Draupner Graphics A/S can only accept contributions that are lawfully submitted to 
+Draupner Graphics A/S, which inter alia means that a contribution must not infringe 
+upon the rights of any third party. It is your responsibility – as the contributing 
+party – that your contribution does not infringe upon the rights of any third party. 
+
+These Terms for Contributions are governed by Danish law and any dispute relating 
+hereto shall be under the exclusive jurisdiction of the Danish courts.”
