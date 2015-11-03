@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+   <pass>
+     <loader>$TOOLKIT_DIR$\config\flashloader\NXP\FlashNXPLPC1024K_BankA.flash</loader>
+     <range>CODE 0x1A000000 0x1A7FFFFF</range>
+   </pass>
+   <pass>
+  <loader>$TOOLKIT_DIR$\config\flashloader\NXP\FlashLPC43xx_SPIFI.flash</loader>
+    <range>CODE 0x14000000 0x18000000</range> 
+    <abs_offset>0</abs_offset>
+  </pass>
+</flash_board>

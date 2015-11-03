@@ -1,3 +1,37 @@
+###############################################################################
+#
+# @brief     This file is part of the TouchGFX 4.4.1 evaluation distribution.
+#
+# @author    Draupner Graphics A/S <http://www.touchgfx.com>
+#
+###############################################################################
+#
+# @section Copyright
+# 
+# This file is free software and is provided for example purposes. You may 
+# use, copy, and modify within the terms and conditions of the license
+# agreement. 
+#
+# This is licensed software for evaluation use, any use must strictly comply
+# with the evaluation license agreement provided with delivery of the
+# TouchGFX software.
+#
+# The evaluation license agreement can be seen on www.touchgfx.com
+#
+# @section Disclaimer
+#
+# DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Draupner Graphics A/S has
+# no obligation to support this software. Draupner Graphics A/S is providing
+# the software "AS IS", with no express or implied warranties of any kind,
+# including, but not limited to, any implied warranties of merchantability
+# or fitness for any particular purpose or warranties against infringement
+# of any proprietary rights of a third party.
+#
+# Draupner Graphics A/S can not be held liable for any consequential,
+# incidental, or special damages, or any other relief, or for any claim by
+# any third party, arising from your use of this software.
+#
+###############################################################################
 # Get name of this Makefile
 makefile_name := $(lastword $(MAKEFILE_LIST))
 
@@ -59,27 +93,22 @@ include $(application_path)/config/gcc/app.mk
 
 ifeq ($(UNAME), Linux)
 include $(application_path)/$(touchgfx_path)/config/toolchain-linux.mk
-library_path := $(touchgfx_path)/lib/sdl/linux64
-libraries := SDL SDL_image SDLmain caca webp m pthread dl
+library_path := $(touchgfx_path)/lib/sdl/linux64 $(touchgfx_path)/lib/linux
+libraries := touchgfx SDL SDL_image SDLmain caca webp m pthread dl
 library_includes += $(touchgfx_path)/framework/include/platform/hal/simulator/sdl/vendor/linux64
 linker_options_local := -Xlinker -rpath -Xlinker $(realpath $(touchgfx_path)/lib/sdl/linux64/)
-resource_file :=
 imageconvert_executable := $(touchgfx_path)/framework/tools/imageconvert/build/linux/imageconvert.out
 fontconvert_executable := $(touchgfx_path)/framework/tools/fontconvert/build/linux/fontconvert.out
 simulator_executable := simulator.out
 else
 include $(application_path)/$(touchgfx_path)/config/toolchain-mingw32.mk
 sdl_library_path := $(touchgfx_path)/lib/sdl/win32
-library_path := $(sdl_library_path)
-libraries := SDL SDL_image SDLmain m pthread mingw32
+library_path := $(sdl_library_path) $(touchgfx_path)/lib/win/mingw32
 library_includes += $(touchgfx_path)/framework/include/platform/hal/simulator/sdl/vendor/win32 #include SDL libs, not touchgfx
-resource_file := $(touchgfx_path)/config/touchgfx.res
 imageconvert_executable := $(touchgfx_path)/framework/tools/imageconvert/build/win/imageconvert.out
 fontconvert_executable := $(touchgfx_path)/framework/tools/fontconvert/build/win/fontconvert.out
+libraries := touchgfx SDL SDL_image SDLmain m pthread mingw32
 simulator_executable := simulator.exe
-$(resource_file): $(resource_file:%.res=%.rc) $(resource_file:%.res=%.ico)
-	@echo Creating Windows resource file with program icon
-	@windres $(resource_file:%.res=%.rc) -O coff -o $@
 endif
 
 include $(application_path)/$(touchgfx_path)/config/toolchain-strict.mk
@@ -88,11 +117,8 @@ include $(application_path)/$(touchgfx_path)/config/toolchain-strict.mk
 framework_includes := $(touchgfx_path)/framework/include
 
 #only take in the source we want to build for this sim
-framework_source := $(touchgfx_path)/framework/source/touchgfx \
-	$(touchgfx_path)/framework/source/platform/hal/simulator/sdl \
-	$(touchgfx_path)/framework/source/platform/driver/lcd \
-	$(touchgfx_path)/framework/source/platform/driver/touch \
-	$(touchgfx_path)/framework/source/common
+framework_source := $(touchgfx_path)/framework/source/platform/hal/simulator/sdl \
+	$(touchgfx_path)/framework/source/platform/driver/lcd
 
 
 #this needs to change when assset include folder changes.
@@ -144,7 +170,7 @@ fontconvert_font_files := $(fontconvert_ttf_lower_files) \
 			  $(fontconvert_bdf_lower_files) \
 			  $(fontconvert_bdf_upper_files)
 
-source_files := $(call find, $(source_paths),*.cpp) $(imageconvert_cpp_files) $(asset_images_output)/src/BitmapDatabase.cpp
+source_files := $(call find, $(source_paths),*.cpp) $(imageconvert_cpp_files) $(asset_images_output)/src/BitmapDatabase.cpp $(touchgfx_path)/framework/source/platform/driver/touch/SDLTouchController.cpp
 
 object_files := $(source_files:%.cpp=$(object_output_path)/%.o)
 object_files := $(patsubst $(object_output_path)/$(touchgfx_path)/%,$(object_output_path)/touchgfx/%,$(object_files))
@@ -176,13 +202,13 @@ $(shell echo "$(object_files)">$(object_output_path)/objects.tmp)
 endif
 endif
 
-$(binary_output_path)/$(simulator_executable): $(object_files) $(resource_file)
+$(binary_output_path)/$(simulator_executable): $(object_files)
 	@echo Linking $(@)
 	@mkdir -p $(@D)
 	@$(linker) \
 		$(linker_options) $(linker_options_local) \
 		$(patsubst %,-L%,$(library_path)) \
-		@$(object_output_path)/objects.tmp -o $@ $(resource_file) \
+		@$(object_output_path)/objects.tmp -o $@ \
 		-Wl,--start-group $(patsubst %,-l%,$(libraries)) -Wl,--end-group
 	@rm -f $(object_output_path)/objects.tmp
 ifneq ($(UNAME), Linux)

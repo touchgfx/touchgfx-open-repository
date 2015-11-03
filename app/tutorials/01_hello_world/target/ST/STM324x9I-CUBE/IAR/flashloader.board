@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_board>
+  <pass>
+    <loader>$TOOLKIT_DIR$\config\flashloader\ST\FlashSTM32F4xxI.flash</loader>
+    <range>CODE 0x08000000 0x081FFFFF</range>
+  </pass>
+  <pass>
+    <loader>$PROJ_DIR$\NOR.flash</loader>
+    <range>CODE 0x60000000 0x60FFFFFF</range>
+  </pass>
+</flash_board>
+
+

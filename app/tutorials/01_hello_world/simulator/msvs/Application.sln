@@ -1,29 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Application.vcxproj", "{B87C9F4F-DD87-4881-87CE-01CDABD73E39}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TouchGFX", "..\..\..\..\..\touchgfx\build_conf\core\simulator\msvs\TouchGFX.vcxproj", "{6EC64FB8-2541-4A8E-8286-6A1AA23ED37E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Application.vcxproj", "{F1F1FD1C-C761-4AEC-9AC5-4862F8F47E81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
-		ReleaseDebug|Win32 = ReleaseDebug|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B87C9F4F-DD87-4881-87CE-01CDABD73E39}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B87C9F4F-DD87-4881-87CE-01CDABD73E39}.Debug|Win32.Build.0 = Debug|Win32
-		{B87C9F4F-DD87-4881-87CE-01CDABD73E39}.Release|Win32.ActiveCfg = Release|Win32
-		{B87C9F4F-DD87-4881-87CE-01CDABD73E39}.Release|Win32.Build.0 = Release|Win32
-		{B87C9F4F-DD87-4881-87CE-01CDABD73E39}.ReleaseDebug|Win32.ActiveCfg = Release|Win32
-		{B87C9F4F-DD87-4881-87CE-01CDABD73E39}.ReleaseDebug|Win32.Build.0 = Release|Win32
-		{6EC64FB8-2541-4A8E-8286-6A1AA23ED37E}.Debug|Win32.ActiveCfg = Debug|Win32
-		{6EC64FB8-2541-4A8E-8286-6A1AA23ED37E}.Debug|Win32.Build.0 = Debug|Win32
-		{6EC64FB8-2541-4A8E-8286-6A1AA23ED37E}.Release|Win32.ActiveCfg = Release|Win32
-		{6EC64FB8-2541-4A8E-8286-6A1AA23ED37E}.Release|Win32.Build.0 = Release|Win32
-		{6EC64FB8-2541-4A8E-8286-6A1AA23ED37E}.ReleaseDebug|Win32.ActiveCfg = ReleaseDebug|Win32
-		{6EC64FB8-2541-4A8E-8286-6A1AA23ED37E}.ReleaseDebug|Win32.Build.0 = ReleaseDebug|Win32
+		{F1F1FD1C-C761-4AEC-9AC5-4862F8F47E81}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F1F1FD1C-C761-4AEC-9AC5-4862F8F47E81}.Debug|Win32.Build.0 = Debug|Win32
+		{F1F1FD1C-C761-4AEC-9AC5-4862F8F47E81}.Release|Win32.ActiveCfg = Release|Win32
+		{F1F1FD1C-C761-4AEC-9AC5-4862F8F47E81}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

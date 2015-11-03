@@ -17,6 +17,15 @@
     <ClCompile Include="..\..\simulator\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\assets\images\background.png" />
+    <None Include="..\..\assets\images\border_box.png" />
+    <None Include="..\..\assets\images\image00.png" />
+    <None Include="..\..\assets\images\image01.png" />
+    <None Include="..\..\assets\images\image02.png" />
+    <None Include="..\..\assets\images\left_button.png" />
+    <None Include="..\..\assets\images\left_button_pressed.png" />
+    <None Include="..\..\assets\images\right_button.png" />
+    <None Include="..\..\assets\images\right_button_pressed.png" />
     <None Include="..\..\assets\texts\texts.xlsx" />
     <None Include="..\..\config\msvs\Application.props" />
   </ItemGroup>
@@ -28,16 +37,8 @@
     <ClInclude Include="..\..\gui\include\gui\template_screen\TemplatePresenter.hpp" />
     <ClInclude Include="..\..\gui\include\gui\template_screen\TemplateView.hpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="$(TouchGFXReleasePath)\build_conf\core\simulator\msvs\TouchGFX.vcxproj">
-      <Project>{6ec64fb8-2541-4a8e-8286-6a1aa23ed37e}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="$(TouchGFXReleasePath)\config\TouchGFX.rc" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B87C9F4F-DD87-4881-87CE-01CDABD73E39}</ProjectGuid>
+    <ProjectGuid>{F1F1FD1C-C761-4AEC-9AC5-4862F8F47E81}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Application</RootNamespace>
   </PropertyGroup>
@@ -46,7 +47,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -87,7 +88,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <DisableSpecificWarnings>4355</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4355;4457;4458;4459</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
     </ClCompile>
@@ -95,7 +96,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <TreatLinkerWarningAsErrors>true</TreatLinkerWarningAsErrors>
-      <DisableSpecificWarnings>4355</DisableSpecificWarnings>
+      <DisableSpecificWarnings>4355;4457;4458;4459</DisableSpecificWarnings>
     </Link>
     <PostBuildEvent>
       <Command>copy $(TouchGFXReleasePath)\lib\sdl\win32\SDL.dll $(OutDir)
@@ -113,7 +114,6 @@ copy $(TouchGFXReleasePath)\lib\sdl\win32\SDL_image.dll $(OutDir)
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

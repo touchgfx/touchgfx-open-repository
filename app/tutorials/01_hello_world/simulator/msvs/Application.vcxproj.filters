@@ -1,38 +1,41 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D767765A-C597-4B5C-BFE5-3B6224288A14}</UniqueIdentifier>
+      <UniqueIdentifier>{B55C8E18-6FFD-436E-83E0-8FEF9C43DEA4}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{7628D610-10BC-46B9-AF29-352FF3225DE9}</UniqueIdentifier>
+      <UniqueIdentifier>{49D186D7-4697-4489-A42F-439B18EF177A}</UniqueIdentifier>
       <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
     <Filter Include="Resource Files">
-      <UniqueIdentifier>{C681A1BD-4AF9-443E-9316-04AE179117C3}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;ttf;png;wav;xlsx;props;mfcribbon-ms</Extensions>
+      <UniqueIdentifier>{B457A959-334A-4178-B1D7-E1267EF704D9}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;ttf;otf;bdf;png;wav;xlsx;props;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Header Files\common">
-      <UniqueIdentifier>{90B02FF8-6B38-4938-A03E-74F72F8BBBF9}</UniqueIdentifier>
+      <UniqueIdentifier>{EEB99C62-85FA-403E-BC8C-95F1A66EC513}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\model">
-      <UniqueIdentifier>{9AB7DEBB-D9B9-491E-A57E-78C2B201DAC8}</UniqueIdentifier>
+      <UniqueIdentifier>{9C77E0D3-8925-4DEA-824E-7BE5CCD98643}</UniqueIdentifier>
     </Filter>
     <Filter Include="Header Files\template_screen">
-      <UniqueIdentifier>{16E512F3-9366-46B2-9AB2-41FCA95CB4CA}</UniqueIdentifier>
+      <UniqueIdentifier>{C87561D3-0FBA-40C7-86F4-D6A179F3FA52}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\common">
-      <UniqueIdentifier>{241E1057-DD28-4AE9-BC1A-ACF7060FD68E}</UniqueIdentifier>
+      <UniqueIdentifier>{21D4F76C-F099-47C0-83F6-5AEC9291CC3D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\template_screen">
-      <UniqueIdentifier>{D3874068-32E3-4834-AE3A-3F96D42123EF}</UniqueIdentifier>
+      <UniqueIdentifier>{F060ACCC-CDA5-4161-80F1-A2B3E094581D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\simulator">
-      <UniqueIdentifier>{16677438-2C8E-450E-9738-75A9D6B0A8D7}</UniqueIdentifier>
+      <UniqueIdentifier>{A63DB011-2CD5-4B02-9F43-103D99A9BBF6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\images">
+      <UniqueIdentifier>{A0083164-57C3-43F6-9A10-1928C8017106}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files\texts">
-      <UniqueIdentifier>{F08E447C-A40F-4703-B146-2FD90E941ACE}</UniqueIdentifier>
+      <UniqueIdentifier>{2C16A6AC-E9C3-468D-BD7A-3164A101B784}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -50,6 +53,33 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\assets\images\background.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\border_box.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\image00.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\image01.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\image02.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\left_button.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\left_button_pressed.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\right_button.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\right_button_pressed.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
     <None Include="..\..\assets\texts\texts.xlsx">
       <Filter>Resource Files\texts</Filter>
     </None>
@@ -76,10 +106,5 @@
     <ClInclude Include="..\..\gui\include\gui\template_screen\TemplateView.hpp">
       <Filter>Header Files\template_screen</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="$(TouchGFXReleasePath)\config\TouchGFX.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>
