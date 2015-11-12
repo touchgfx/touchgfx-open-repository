@@ -43,7 +43,7 @@ The TouchGFX version stated is the version that the component has been tested wi
   <tr>
     <td>Graph <br>TouchGFX 4.3<br> <a href="widgets/Graph/"> <img src="widgets/Graph/screenshots/img00.bmp" height="100"></a></td>  
     <td>QRCode <br>TouchGFX 4.3<br> <a href="widgets/QRCode/"> <img src="widgets/QRCode/screenshots/qr.bmp" height="100"></a></td>
-    <td></td>
+    <td>LiquidContainer</td>
   </tr>
 </table>
  
