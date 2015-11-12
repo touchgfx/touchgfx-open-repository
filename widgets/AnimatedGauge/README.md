@@ -2,7 +2,7 @@
 #Purpose
 Tired of plain old linear gauges? Then soup up your interface with animated ones. Rather than showing your data statically, the AnimatedGauge widget sports a scrolling level image. Use it add a little pizazz to your interface with waves, dynamic gradients, or whatever strikes your fancy.
 
-The animated gauge uses two images, one for the gauge housing (which is static) and one for the linear gauge inside (which is animated). The housing must have a transparent section. This serves as a viewport through which the scrolling  image is shown. The animated image should be at least the size of the viewport and have matching left and right sides for smooth wrapping around when scrolling.
+The animated gauge uses two images, one for the static gauge housing and one for the animated gauge inside. The housing must have a transparent section. This serves as a viewport through which the animated image is shown. The animated image should be at least the size of the viewport and have matching left and right sides for smooth wrapping around when scrolling.
 
 For demonstration purposes, the AnimatedGauge contains a text displaying the current value numerically. Also, it supports level adjustment by clicking (top half to increase, bottom half to decrease, in user-specified increments). Feel free to change or disable as you see fit.
 
