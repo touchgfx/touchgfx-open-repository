@@ -14,19 +14,19 @@ This widget was created and tested using TouchGFX version 4.4.1.
 #Functional description
 The initialization function for the AnimatedGauge widget takes more parameters than you can shake a stick at. But don't despair. Once your widget is up and running, it is completely maintenance free, providing you with years of uninterrupted, carefree animation. Play around with the values in the examples below to see how they affect the behavior. Soon, you will be deploying AnimatedGauge widgets like a pro.
 
-	// show beaker
+	// show beaker with green acid
 	ClickListener<AnimatedGauge> beaker;
 	beaker.init(BITMAP_BEAKER_ID, BITMAP_ACID_ID, 20, 250, 3, T_MILLILITERS, 39, 138, 150, 50, 0, 250, 90, 5);
 	beaker.setXY(20, 20); 
 	add(beaker);
 
-	// show test tube
+	// show water-filled test tube
 	ClickListener<AnimatedGauge> tube;
 	tube.init(BITMAP_TESTTUBE_ID, BITMAP_WATER_ID, 25, 194, -1, T_PERCENT, 5, 159, 50, 50, 0, 100, 75, 1);
 	tube.setXY(282, 55);
 	add(tube);
 
-	// show oil gauge
+	// show oil temperature gauge
 	ClickListener<AnimatedGauge> gauge;
 	gauge.init(BITMAP_GAUGE_ID, BITMAP_OIL_ID, 35, 135, 1, T_DEGREES, 0, 60, 200, 50, 90, 150, 105, 5);
 	gauge.setXY(375, 60);
