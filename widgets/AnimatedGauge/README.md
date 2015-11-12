@@ -1,4 +1,4 @@
-![example](screenshots/AnimatedGauge-large.gif "This is what LiquidContainer widgets look like. Only silky smooth, of course. (I'm even worse at building animated GIFs than I am at programming. Thank goodness I do neither for a living.)")
+![example](screenshots/AnimatedGauge-large.gif "This is what AnimatedGauge widgets look like. Only silky smooth, of course. (I'm even worse at building animated GIFs than I am at programming. Thank goodness I do neither for a living.)")
 #Purpose
 Tired of plain old linear gauges? Then soup up your interface with animated ones. Rather than showing your data statically, the AnimatedGauge widget sports a scrolling level image. Use it add a little pizazz to your interface with waves, dynamic gradients, or whatever strikes your fancy.
 
