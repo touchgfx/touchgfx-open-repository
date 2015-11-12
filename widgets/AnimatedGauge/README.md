@@ -6,7 +6,7 @@ The animated gauge uses two images, one for the static gauge housing and one for
 
 For demonstration purposes, the AnimatedGauge contains a text displaying the current value numerically. Also, it supports level adjustment by clicking (top half to increase, bottom half to decrease, in user-specified increments). Feel free to change or remove the corresponding code as you see fit.
 
-Caveat: The AnimatedGauge represents my first forays into TouchGFX programming. As you can tell, my C++ coding skills are somewhat rusty. But hey, the code compiles and the widget seems to work, so I thought I might as well share it. Enjoy!
+Caveat: The AnimatedGauge represents my first foray into TouchGFX programming. As you can tell, my C++ coding skills are somewhat rusty. But hey, the code compiles and the widget seems to work, so I thought I might as well share it. Enjoy!
 
 #TouchGFX Version
 This widget was created and tested using TouchGFX version 4.4.1.
