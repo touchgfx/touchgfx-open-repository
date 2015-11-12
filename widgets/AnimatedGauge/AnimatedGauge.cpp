@@ -1,31 +1,30 @@
-#include <gui/template_screen/LiquidContainer.hpp>
+#include <gui/template_screen/AnimatedGauge.hpp>
 #include <touchgfx/Color.hpp>
 
-LiquidContainer::LiquidContainer()
+AnimatedGauge::AnimatedGauge()
 {
 }
 
-void LiquidContainer
-::init(int containerImageId, int liquidImageId, 
-       int containerTopOffset, int containerBottomOffset,
-       int liquidSpeed, 
-       int textId, int textX, int textY, int textWidth, int textHeight,
-       int min, int max, int start, int step)
+void AnimatedGauge::init(int fgImageImageId, int bgImageId, 
+			 int topPixels, int bottomPixels, 
+			 int scrollSpeed, 
+			 int textId, int textX, int textY, int textWidth, int textHeight,
+			 int minValue, int maxValue, int startValue, int stepValue)
 {
 
-  // initialize and position container and liquid images
-  container.setBitmap(Bitmap(containerImageId));
-  liquid.setBitmap(Bitmap(liquidImageId));
-  liquid2.setBitmap(Bitmap(liquidImageId));
-  container.setXY(0, 0);
-  liquid.setXY(0, 0);
-  liquid2.setXY(liquid.getWidth(), 0);
-  setWidth(container.getWidth());
-  setHeight(container.getHeight());
+  // initialize and position foreground and background images
+  fgImage.setBitmap(Bitmap(fgImageImageId));
+  bgImageLeft.setBitmap(Bitmap(bgImageId));
+  bgImageRight.setBitmap(Bitmap(bgImageId));
+  fgImage.setXY(0, 0);
+  bgImageLeft.setXY(0, 0);
+  bgImageRight.setXY(bgImageLeft.getWidth(), 0);
+  setWidth(fgImage.getWidth());
+  setHeight(fgImage.getHeight());
   
-  // set number of pixels from top of image to top and bottom of container
-  pixelTopOffset = containerTopOffset;
-  pixelBottomOffset = containerBottomOffset;
+  // set viewport
+  viewportTop = topPixels;
+  viewportBottom = bottomPixels;
 
   // intialize text
   levelTxt.setWildcard(levelTxtbuf);
@@ -34,69 +33,73 @@ void LiquidContainer
   levelTxt.setColor(Color::getColorFrom24BitRGB(0x00, 0x00, 0x00));
 
   // set level
-  minLevel = min;
-  maxLevel = max;
-  stepLevel = step;
-  setLevel(start);
+  minLevel = minValue;
+  maxLevel = maxValue;
+  stepLevel = stepValue;
+  setLevel(startValue);
 
   // add components
-  add(liquid);
-  add(liquid2);
-  add(container);
+  add(bgImageLeft);
+  add(bgImageRight);
+  add(fgImage);
   add(levelTxt);
 
   // initizlize animation
-  speed = liquidSpeed;
+  speed = scrollSpeed;
   Application::getInstance()->registerTimerWidget(this);
 }
 
-void LiquidContainer::setLevel(int level)
+void AnimatedGauge::setLevel(int level)
 {
   // boundary check
-  if (level < minLevel)
-    level = minLevel;
-  if (level > maxLevel)
+  if (level < minLevel) 
+  {
+      level = minLevel;
+  }
+  if (level > maxLevel) 
+  {
     level = maxLevel;
+  }
 
   // set level
   currentLevel = level;
 
-  // move liquid up or down
-  int offset = 
-    (pixelBottomOffset-pixelTopOffset) 
-    * (maxLevel-currentLevel)/(maxLevel-minLevel) 
-    + pixelTopOffset;
-  liquid.moveTo(liquid.getX(), offset);
-  liquid2.moveTo(liquid2.getX(), offset);
+  // move gauge up or down
+  int offset = (viewportBottom-viewportTop) * (maxLevel-currentLevel)/(maxLevel-minLevel) + viewportTop;
+  bgImageLeft.moveTo(bgImageLeft.getX(), offset);
+  bgImageRight.moveTo(bgImageRight.getX(), offset);
 
   // update level text
   Unicode::snprintf(levelTxtbuf, 5, "%d", currentLevel);
   levelTxt.invalidate();
 }
 
-void LiquidContainer::handleTickEvent()
+void AnimatedGauge::handleTickEvent()
 {
-  // scroll liquid images
-  liquid.moveRelative(speed, 0);
-  liquid2.moveRelative(speed, 0);
+  // scroll background images
+  bgImageLeft.moveRelative(speed, 0);
+  bgImageRight.moveRelative(speed, 0);
 
   // when reaching far left, scoot over to the right
-  if (liquid.getX()+liquid.getWidth() < container.getWidth()) {
-    liquid.moveRelative(liquid.getWidth(), 0);
-    liquid2.moveRelative(liquid.getWidth(), 0);
+  if (bgImageLeft.getX()+bgImageLeft.getWidth() < fgImage.getWidth()) 
+  {
+    bgImageLeft.moveRelative(bgImageLeft.getWidth(), 0);
+    bgImageRight.moveRelative(bgImageLeft.getWidth(), 0);
   }
 
   // when reaching far right, scoot over to the left
-  if (liquid.getX() > 0) {
-    liquid.moveRelative(-liquid.getWidth(), 0);
-    liquid2.moveRelative(-liquid.getWidth(), 0);
+  if (bgImageLeft.getX() > 0) 
+  {
+    bgImageLeft.moveRelative(-bgImageLeft.getWidth(), 0);
+    bgImageRight.moveRelative(-bgImageLeft.getWidth(), 0);
   }
 }
 
-void LiquidContainer::handleClickEvent(const ClickEvent& evt)
+void AnimatedGauge::handleClickEvent(const ClickEvent& evt)
 {
   // for demonstration purposes, adjust level up or down when clicked
-  if (evt.getType() == ClickEvent::RELEASED) {
+  if (evt.getType() == ClickEvent::RELEASED) 
+  {
     int delta = (evt.getY() < this->getHeight()/2) ? 1 : -1;
     setLevel(currentLevel + stepLevel*delta);
   }

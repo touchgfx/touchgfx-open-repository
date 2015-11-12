@@ -1,5 +1,5 @@
-#ifndef LIQUID_CONTAINER_HPP
-#define LIQUID_CONTAINER_HPP
+#ifndef ANIMATED_GAUGE_HPP
+#define ANIMATED_GAUGE_HPP
 
 #include <mvp/View.hpp>
 #include <gui/template_screen/TemplatePresenter.hpp>
@@ -11,25 +11,34 @@
 
 using namespace touchgfx;
 
-class LiquidContainer : public Container
+class AnimatedGauge : public Container
 {
 public:
-  LiquidContainer();
-  void init(int containerImageId, int liquidImageId, 
-	    int containerTopOffset, int containerBottomOffset, 
-	    int liquidSpeed, 
-	    int textId, int textX, int textY, int textWidth, int textHeight,
-	    int min, int max, int start, int step);
+  AnimatedGauge();
+  void init(int bgImageId, // foreground image
+	    int fgImageId, // background image
+	    int topPixels, // top of transparent foreground image viewport
+	    int bottomPixels, // bottom of transparent foreground image viewport
+	    int scrollSpeed, // number of pixels to scroll at a time
+	    int textId, // text label id
+	    int textX, // text label postion X
+	    int textY, // text label position Y
+	    int textWidth, // text label width
+	    int textHeight, // text label height
+	    int minValue, // minimum gauge value
+	    int maxValue, // maximum gauge value
+	    int startValue, // starting gauge value
+	    int stepValue); // gauge value changed when clicked
   void setLevel(int level);
   void handleTickEvent();
   virtual void handleClickEvent(const ClickEvent& evt);
 private:
-  Image container, liquid, liquid2;
-  int pixelTopOffset, pixelBottomOffset;
+  Image fgImage, bgImageLeft, bgImageRight;
+  int viewportTop, viewportBottom;
   int minLevel, maxLevel, currentLevel, stepLevel;
   int speed;
   TextAreaWithOneWildcard levelTxt;
   Unicode::UnicodeChar levelTxtbuf[20];
 };
 
-#endif // LIQUID_CONTAINER_HPP
+#endif // ANIMATED_GAUGE_HPP
