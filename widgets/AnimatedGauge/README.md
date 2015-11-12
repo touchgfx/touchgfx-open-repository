@@ -4,7 +4,7 @@ Tired of plain old linear gauges? Then soup up your interface with animated ones
 
 The animated gauge uses two images, one for the static gauge housing and one for the animated gauge inside. The housing must have a transparent section. This serves as a viewport through which the animated image is shown. The animated image should be at least the size of the viewport and have matching left and right sides for smooth wrapping around when scrolling.
 
-For demonstration purposes, the AnimatedGauge contains a text displaying the current value numerically. Also, it supports level adjustment by clicking (top half to increase, bottom half to decrease, in user-specified increments). Feel free to change or disable as you see fit.
+For demonstration purposes, the AnimatedGauge contains a text displaying the current value numerically. Also, it supports level adjustment by clicking (top half to increase, bottom half to decrease, in user-specified increments). Feel free to change or remove the corresponding code as you see fit.
 
 Caveat: The AnimatedGauge represents my first forays into TouchGFX programming. As you can tell, my C++ coding skills are somewhat rusty. But hey, the code compiles and the widget seems to work, so I thought I might as well share it. Enjoy!
 
