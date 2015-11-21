@@ -1,6 +1,6 @@
 # <img src="http://touchgfx.com/static/touchgfx_logo_open_rep_small.png" width="500" height="135">
 
-TouchGFX is a C++ graphics framework for limited-resource embedded systems. It allows you to create modern user interfaces with a smartphone-like look and feel on hardware platforms an order of magnitude less powerful than smartphones, e.g. ARM Cortex M3/M4 48-204 MHz.
+TouchGFX is a C++ graphics framework for limited-resource embedded systems based on ARM Cortex-M3, M4 and M7. You can use TouchGFX to create modern user interfaces with a smartphone-like look and feel on hardware platforms an order of magnitude less powerful (48-216 Mhz) than smartphones.
 
 This repository, the *TouchGFX Open Repository*, contains numerous examples of, and ideas for, graphical components such as widgets, containers and "mixins" that are not part of the core distribution. They can be used as a source of inspiration for your applications free of charge; The components are all generalized to some extent but probably needs some sort of fine tuning to match your specific needs. Please note that none of the components are guaranteed to be maintained across new versions of TouchGFX. 
 
