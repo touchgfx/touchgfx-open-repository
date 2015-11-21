@@ -20,6 +20,7 @@ This repository would greatly benefit from TouchGFX developers around the world 
 
 Please note that your contribution is subject to the terms that can be found <a href="license.txt">here</a>.
 
+Thank you for your contribution!
 # List of Components
 
 In the following table you can see the name, TouchGFX version, and a preview of the TouchGFX graphical components in this repository. 
