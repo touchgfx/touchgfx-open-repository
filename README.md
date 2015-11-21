@@ -4,6 +4,10 @@ TouchGFX is a C++ graphics framework for limited-resource embedded systems based
 
 This repository, the *TouchGFX Open Repository*, contains numerous examples of, and ideas for, graphical components such as widgets, containers and "mixins" that are not part of the core distribution. They can be used as a source of inspiration for your applications free of charge; The components are all generalized to some extent but probably needs some sort of fine tuning to match your specific needs. Please note that none of the components are guaranteed to be maintained across new versions of TouchGFX. 
 
+You can request a full evaluation version of the framework, as well as order commercial licenses, on the [TouchGFX website](http://touchgfx.com/product-details/evaluation/). Read more about the concept of widgets, containers and "mixins" in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
+
+# Contributing
+
 This repository would greatly benefit from TouchGFX developers around the world sharing some of their work. Having a solid community that shares complex ideas for TouchGFX widgets is something that can help reduce development time greatly. If you would like to contribute to this repository you can fork and follow the guide below. When done, open a pull request to your branch. Each contribution should conform to the following standards:
 
  1. Create a suitable folder inside widgets/ for your contribution
@@ -13,8 +17,6 @@ This repository would greatly benefit from TouchGFX developers around the world 
    - Purpose of the widget - Any screenshots you may have could be shown here.
    - Version(s) of TouchGFX you've tested your code on
    - Functional description of the widget and it's configuration. Code can be verbatim formatted in .md by indenting with 4 spaces.
-
-On the TouchGFX website you can request a full evaluation version of the framework as well as order commercial licenses. Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
 
 Please note that your contribution is subject to the terms that can be found <a href="license.txt">here</a>.
 
