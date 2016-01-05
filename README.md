@@ -1,8 +1,12 @@
 # <img src="http://touchgfx.com/static/touchgfx_logo_open_rep_small.png" width="500" height="135">
 
-TouchGFX is framework, written in C++, that allows you to create modern, graphical user interfaces on limited-resource embedded systems and allows smartphone-like look and feel on hardware platforms an order of magnitude less powerful than smartphones, e.g. ARM Cortex M3/M4 48-204 MHz.
+TouchGFX is a C++ graphics framework for limited-resource embedded systems based on ARM Cortex-M3, M4 and M7. You can use TouchGFX to create modern user interfaces with a smartphone-like look and feel on hardware platforms an order of magnitude less powerful (48-216 Mhz) than smartphones.
 
-This repository, the *TouchGFX Open Repository*, contains numerous examples of, and ideas for, graphical components such as widgets, containers and mixins that are not part of the core framework. They can be used as a source of inspiration for your applications free of charge; The components are all generalized to some extent but probably needs some sort of fine tuning to match your specific needs. Please note that none of the components are guaranteed to be maintained across new versions of TouchGFX. 
+This repository, the *TouchGFX Open Repository*, contains numerous examples of, and ideas for, graphical components such as widgets, containers and "mixins" that are not part of the core distribution. They can be used as a source of inspiration for your applications free of charge; The components are all generalized to some extent but probably needs some sort of fine tuning to match your specific needs. Please note that none of the components are guaranteed to be maintained across new versions of TouchGFX. 
+
+You can request a full evaluation version of the framework, as well as order commercial licenses, on the [TouchGFX website](http://touchgfx.com/product-details/evaluation/). Read more about the concept of widgets, containers and "mixins" in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
+
+# Contributing
 
 This repository would greatly benefit from TouchGFX developers around the world sharing some of their work. Having a solid community that shares complex ideas for TouchGFX widgets is something that can help reduce development time greatly. If you would like to contribute to this repository you can fork and follow the guide below. When done, open a pull request to your branch. Each contribution should conform to the following standards:
 
@@ -14,8 +18,9 @@ This repository would greatly benefit from TouchGFX developers around the world 
    - Version(s) of TouchGFX you've tested your code on
    - Functional description of the widget and it's configuration. Code can be verbatim formatted in .md by indenting with 4 spaces.
 
-On the TouchGFX website you can request a full evaluation version of the framework as well as order commercial licenses. Read more about the concept of widgets, containers and mixins in  in the TouchGFX [documentation](http://touchgfx.com/documentation/html/index.html).
+Please note that your contribution is subject to the terms that can be found <a href="license.txt">here</a>.
 
+Thank you for your contribution!
 # List of Components
 
 In the following table you can see the name, TouchGFX version, and a preview of the TouchGFX graphical components in this repository. 
@@ -41,7 +46,7 @@ The TouchGFX version stated is the version that the component has been tested wi
   <tr>
     <td>Graph <br>TouchGFX 4.3<br> <a href="widgets/Graph/"> <img src="widgets/Graph/screenshots/img00.bmp" height="100"></a></td>  
     <td>QRCode <br>TouchGFX 4.3<br> <a href="widgets/QRCode/"> <img src="widgets/QRCode/screenshots/qr.bmp" height="100"></a></td>
-    <td></td>
+    <td>Animated Gauge<br>TouchGFX 4.4.1<br><a href="widgets/AnimatedGauge/"> <img src="widgets/AnimatedGauge/screenshots/AnimatedGauge-small.gif" height="100"></a></td>
   </tr>
 </table>
  
@@ -62,9 +67,11 @@ The TouchGFX version stated is the version that the component has been tested wi
 
 <img align="left" src="http://touchgfx.com/static/touchgfx_demos.png">
 
-# Licensing
+# License Terms
 
-All widgets, containers and mixins found in this repository are free software for both commercial and non-commericial use. You may use, copy, redistribute and modify the files as needed. The code is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
+All software, including widgets, containers and mixins and codes found in this repository (hereinafter referred to collectively as the “Software”) are available to download free of charge and the Software may be used for both commercial and non-commercial purposes. You may use, copy, redistribute and modify the Software as needed. The code is distributed in the hope that it will be useful. 
+
+Read Full License/Contribution Terms text <a href="license.txt">here</a>. 
 
 # Ownership
 

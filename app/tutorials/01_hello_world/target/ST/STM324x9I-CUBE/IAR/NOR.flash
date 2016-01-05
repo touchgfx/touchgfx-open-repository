@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$PROJ_DIR$\NOR.out</exe>
+  <page>1024</page>
+  <block>128 0x20000</block>
+  <flash_base>0x60000000</flash_base>
+  <macro>$PROJ_DIR$\flash.mac</macro>
+  <aggregate>1</aggregate>
+</flash_device>
