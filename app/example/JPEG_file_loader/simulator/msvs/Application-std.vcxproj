@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build" ToolsVersion="4.0">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -16,9 +16,39 @@
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl\HALSDL_icon.cpp" />
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl\OSWrappers.cpp" />
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp" />
+    <ClCompile Include="..\..\gui\src\common\JPEGFileInput.cpp" />
+    <ClCompile Include="..\..\gui\src\common\JPEGFileLoader.cpp" />
+    <ClCompile Include="..\..\gui\src\common\StdFileInput.cpp" />
     <ClCompile Include="..\..\gui\src\model\Model.cpp" />
     <ClCompile Include="..\..\gui\src\template_screen\TemplatePresenter.cpp" />
     <ClCompile Include="..\..\gui\src\template_screen\TemplateView.cpp" />
+    <ClCompile Include="..\..\LibJPEG\source\jaricom.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jcomapi.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdapimin.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdapistd.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdarith.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdatasrc.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdcoefct.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdcolor.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jddctmgr.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdhuff.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdinput.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdmainct.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdmarker.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdmaster.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdmerge.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdpostct.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdsample.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jdtrans.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jerror.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jidctflt.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jidctfst.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jidctint.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jmemmgr.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jmemnobs.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jquant1.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jquant2.c" />
+    <ClCompile Include="..\..\LibJPEG\source\jutils.c" />
     <ClCompile Include="..\..\simulator\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -48,14 +78,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -87,11 +117,12 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <TreatWarningAsError>true</TreatWarningAsError>
       <DisableSpecificWarnings>4355;4457;4458;4459</DisableSpecificWarnings>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>$(ApplicationRoot)\LibJPEG\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -43,6 +43,9 @@
     <Filter Include="Resource Files\texts">
       <UniqueIdentifier>{7F4C29FB-179E-4202-82D4-83F937BD0C8B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\LibJPEG">
+      <UniqueIdentifier>{4d27fc3a-357d-4999-91ce-b19b4bd3169e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
@@ -71,6 +74,96 @@
     </ClCompile>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl\OSWrappers.cpp">
       <Filter>Source Files\TouchGFX</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jutils.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jquant2.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jquant1.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jmemmgr.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jidctint.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jidctfst.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jidctflt.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jerror.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdtrans.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdsample.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdpostct.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdmerge.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdmaster.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdmarker.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdmainct.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdinput.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdhuff.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jddctmgr.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdcolor.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdcoefct.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdatasrc.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdarith.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdapistd.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jdapimin.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jcomapi.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jaricom.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\LibJPEG\source\jmemnobs.c">
+      <Filter>Source Files\LibJPEG</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\JPEGFileInput.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\JPEGFileLoader.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\StdFileInput.cpp">
+      <Filter>Source Files\common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -106,5 +199,10 @@
     <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\hal\simulator\sdl\HALSDL.hpp">
       <Filter>Header Files\TouchGFX</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(TouchGFXReleasePath)\config\TouchGFX.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
