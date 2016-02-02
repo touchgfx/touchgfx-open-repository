@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2F3FC0AA-97C4-4366-9939-94A0FF4E028C}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4D1BFFCC-9CEB-4ABF-A951-582870FE71FD}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{92BBFF14-FBDB-4755-BA47-A830D863D92B}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;ttf;otf;bdf;png;wav;xlsx;props;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{FDF8D7B8-1D54-4698-A928-F0B27046724A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model">
+      <UniqueIdentifier>{91E5C623-E149-4E90-A403-04BA79B0A166}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\template_screen">
+      <UniqueIdentifier>{187A0EC4-E952-443B-9C35-2FBCBA33CEB3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\TouchGFX">
+      <UniqueIdentifier>{F57604AB-38F4-4078-8BB2-947A1AD5D409}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{22817FFE-B9E5-4AEC-8121-A12B81B5D8DE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model">
+      <UniqueIdentifier>{66EFE5ED-89A2-499C-857A-9ABFF2415D01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\template_screen">
+      <UniqueIdentifier>{38D88E89-2644-4AED-A4FD-766DB5300628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\simulator">
+      <UniqueIdentifier>{A5EB52C1-918E-4354-9719-951B3643800B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\TouchGFX">
+      <UniqueIdentifier>{C07B02A9-A55E-47AA-AD61-59A6AAD754E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\texts">
+      <UniqueIdentifier>{7F4C29FB-179E-4202-82D4-83F937BD0C8B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\model\Model.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\template_screen\TemplatePresenter.cpp">
+      <Filter>Source Files\template_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\template_screen\TemplateView.cpp">
+      <Filter>Source Files\template_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\simulator\main.cpp">
+      <Filter>Source Files\simulator</Filter>
+    </ClCompile>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDLTouchController.cpp">
+      <Filter>Source Files\TouchGFX</Filter>
+    </ClCompile>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl\HALSDL.cpp">
+      <Filter>Source Files\TouchGFX</Filter>
+    </ClCompile>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl\HALSDL_icon.cpp">
+      <Filter>Source Files\TouchGFX</Filter>
+    </ClCompile>
+    <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\hal\simulator\sdl\OSWrappers.cpp">
+      <Filter>Source Files\TouchGFX</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\texts\texts.xlsx">
+      <Filter>Resource Files\texts</Filter>
+    </None>
+    <None Include="..\..\config\msvs\Application.props">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\template_screen\TemplatePresenter.hpp">
+      <Filter>Header Files\template_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\template_screen\TemplateView.hpp">
+      <Filter>Header Files\template_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\driver\touch\SDLTouchController.hpp">
+      <Filter>Header Files\TouchGFX</Filter>
+    </ClInclude>
+    <ClInclude Include="$(TouchGFXReleasePath)\framework\include\platform\hal\simulator\sdl\HALSDL.hpp">
+      <Filter>Header Files\TouchGFX</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

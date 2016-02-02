@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{D767765A-C597-4B5C-BFE5-3B6224288A14}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{7628D610-10BC-46B9-AF29-352FF3225DE9}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{C681A1BD-4AF9-443E-9316-04AE179117C3}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;ttf;otf;bdf;png;wav;xlsx;props;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{90B02FF8-6B38-4938-A03E-74F72F8BBBF9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model">
+      <UniqueIdentifier>{9AB7DEBB-D9B9-491E-A57E-78C2B201DAC8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\template_screen">
+      <UniqueIdentifier>{16E512F3-9366-46B2-9AB2-41FCA95CB4CA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{241E1057-DD28-4AE9-BC1A-ACF7060FD68E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\model">
+      <UniqueIdentifier>{E36926C2-4D38-4459-A3AA-84A19352C63D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\template_screen">
+      <UniqueIdentifier>{D3874068-32E3-4834-AE3A-3F96D42123EF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\simulator">
+      <UniqueIdentifier>{16677438-2C8E-450E-9738-75A9D6B0A8D7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\texts">
+      <UniqueIdentifier>{F08E447C-A40F-4703-B146-2FD90E941ACE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\model\Model.cpp">
+      <Filter>Source Files\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\template_screen\TemplatePresenter.cpp">
+      <Filter>Source Files\template_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\template_screen\TemplateView.cpp">
+      <Filter>Source Files\template_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\simulator\main.cpp">
+      <Filter>Source Files\simulator</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\texts\texts.xlsx">
+      <Filter>Resource Files\texts</Filter>
+    </None>
+    <None Include="..\..\config\msvs\Application.props">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\template_screen\TemplatePresenter.hpp">
+      <Filter>Header Files\template_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\template_screen\TemplateView.hpp">
+      <Filter>Header Files\template_screen</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="$(TouchGFXReleasePath)\config\TouchGFX.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
