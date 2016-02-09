@@ -8,13 +8,13 @@
 class Utils
 {
 public:
-    static int randomNumberBetween(int lowest, int highest) 
+    static int randomNumberBetween(int lowest, int highest)
     {
 #ifdef SIMULATOR
-        return lowest + (highest-lowest) * rand() / RAND_MAX;
+        return lowest + (highest - lowest) * rand() / RAND_MAX;
 #else
         uint32_t random = (touchgfx::HAL::getInstance()->getCPUCycles() * HAL::getInstance()->getCPUCycles());
-        return lowest + (random % (highest-lowest));
+        return lowest + (random % (highest - lowest));
 #endif
     }
 
@@ -33,7 +33,7 @@ void TemplateView::setupScreen()
 
     // Set the outer dimensions and color of the graph
     graph.setup(440, 200, Color::getColorFrom24BitRGB(0xFF, 0xFF, 0xAC));
-    
+
     // Set the range for the x and y axis of the graph. That is
     // the max and min x/y value that can be displayed inside the
     // dimension of the graph.
@@ -57,9 +57,9 @@ void TemplateView::handleTickEvent()
 
     if (tickCounter % interval == 0)
     {
-        // Insert a point in the graph. 
+        // Insert a point in the graph.
         // The Y value is a random number in the y range of the graph.
-        graph.addValue(tickCounter/interval, Utils::randomNumberBetween(graph.getRangeBottom(), graph.getRangeTop()));
+        graph.addValue(tickCounter / interval, Utils::randomNumberBetween(graph.getRangeBottom(), graph.getRangeTop()));
     }
 
     if (tickCounter == 13 * interval)

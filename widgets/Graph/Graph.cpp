@@ -16,7 +16,7 @@ void Graph::setup(int newWidth, int newHeight, uint16_t lineColor)
 {
     setWidth(newWidth);
     setHeight(newHeight);
-    
+
     graphLinePainter.setColor(lineColor);
 
     graphLine.setPosition(0, 0, getWidth(), getHeight());
@@ -28,9 +28,9 @@ void Graph::setup(int newWidth, int newHeight, uint16_t lineColor)
     add(graphLine);
 }
 
-void Graph::setRange(int left, int right, int bottom, int top) 
-{ 
-    graphLine.setRange(left, right, bottom, top); 
+void Graph::setRange(int left, int right, int bottom, int top)
+{
+    graphLine.setRange(left, right, bottom, top);
 }
 
 void Graph::setAlpha(uint8_t alpha)

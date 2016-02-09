@@ -15,9 +15,9 @@ using namespace touchgfx;
  * @class Graph
  *
  * @brief A connected line graph.
- *        
+ *
  *        A connected line graph. The graph is limited to integer values for x and y and the
- *        values should not exceed 1000. If other values are needed they should be 
+ *        values should not exceed 1000. If other values are needed they should be
  *        transformed/scaled to be in the interval [0;1000] before added to the graph.
  *
  * @sa Container
@@ -43,7 +43,7 @@ public:
      * @fn void Graph::setup(int newWidth, int newHeight, uint16_t lineColor);
      *
      * @brief Set characteristics of the graph.
-     *        
+     *
      *        Set characteristics of the graph.
      *
      * @param newWidth        Width of the new.
@@ -56,7 +56,7 @@ public:
      * @fn bool Graph::addValue(int x, int y)
      *
      * @brief Adds a point to the graph.
-     *        
+     *
      *        Adds a point to the graph.
      *
      * @param x The x coordinate.
@@ -64,9 +64,9 @@ public:
      *
      * @return true if it succeeds, false if it fails.
      */
-    bool addValue(int x, int y) 
-    { 
-        return graphLine.addValue(x, y); 
+    bool addValue(int x, int y)
+    {
+        return graphLine.addValue(x, y);
     }
 
     /**
@@ -78,8 +78,8 @@ public:
      *
      * @return true if it succeeds, false if it fails.
      */
-    bool deleteValue(int x) 
-    { 
+    bool deleteValue(int x)
+    {
         return graphLine.deleteValue(x);
     }
 
@@ -87,19 +87,19 @@ public:
      * @fn void Graph::clear()
      *
      * @brief Clears the graph.
-     *        
+     *
      *        Clears the graph.
      */
-    void clear() 
-    { 
-        graphLine.clearGraph();        
-    } 
+    void clear()
+    {
+        graphLine.clearGraph();
+    }
 
     /**
      * @fn void Graph::setRange(int left, int right, int top, int bottom);
      *
      * @brief Sets the range of the graph.
-     *        
+     *
      *        Sets the range of the graph.
      *
      * @param left   The value at the left of the graph area.
@@ -114,8 +114,8 @@ public:
      * @fn template <class T> void Graph::setLineWidth(T width)
      *
      * @brief Sets the width for this graph line in pixels.
-     *        
-     *        Sets the width for this graph line in pixels. 
+     *
+     *        Sets the width for this graph line in pixels.
      *
      * @note The graph line is invalidated.
      *
@@ -132,7 +132,7 @@ public:
      * @fn template <class T> T Graph::getLineWidth() const
      *
      * @brief Gets line width in pixels.
-     *        
+     *
      *        Gets line width in pixels.
      *
      * @tparam T Generic type parameter.
@@ -152,7 +152,10 @@ public:
      *
      * @return The x value at the left of the graph area.
      */
-    int getRangeLeft() { return graphLine.getRangeLeft(); }
+    int getRangeLeft()
+    {
+        return graphLine.getRangeLeft();
+    }
 
     /**
      * @fn int Graph::getRangeRight()
@@ -161,7 +164,10 @@ public:
      *
      * @return The x value at the right of the graph area.
      */
-    int getRangeRight() { return graphLine.getRangeRight(); }
+    int getRangeRight()
+    {
+        return graphLine.getRangeRight();
+    }
 
     /**
      * @fn int Graph::getRangeBottom()
@@ -170,22 +176,28 @@ public:
      *
      * @return The y value at the bottom of the graph area.
      */
-    int getRangeBottom() { return graphLine.getRangeBottom(); }
+    int getRangeBottom()
+    {
+        return graphLine.getRangeBottom();
+    }
 
-     /**
-      * @fn int Graph::getRangeTop()
-      *
-      * @brief Gets the y value at the top of the graph area.
-      *
-      * @return The y value at the top of the graph area.
-      */
-     int getRangeTop() { return graphLine.getRangeTop(); }
+    /**
+     * @fn int Graph::getRangeTop()
+     *
+     * @brief Gets the y value at the top of the graph area.
+     *
+     * @return The y value at the top of the graph area.
+     */
+    int getRangeTop()
+    {
+        return graphLine.getRangeTop();
+    }
 
     /**
      * @fn void Graph::setAlpha(uint8_t alpha);
      *
      * @brief Sets the alpha.
-     *        
+     *
      *        Sets the alpha.
      *
      * @param alpha The alpha.
@@ -196,7 +208,7 @@ public:
      * @fn uint8_t Graph::getAlpha();
      *
      * @brief Gets the alpha.
-     *        
+     *
      *        Gets the alpha.
      *
      * @return The alpha.
