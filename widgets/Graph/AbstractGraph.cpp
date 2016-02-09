@@ -121,7 +121,8 @@ void AbstractGraph::clearGraph()
 
 bool AbstractGraph::addValue(int x, int y)
 {
-    if (numPoints >= maxPoints)
+    int index = findX(x);
+    if ((numPoints >= maxPoints) && (points[index].x != x))
     {
         return false;
     }
@@ -136,7 +137,6 @@ bool AbstractGraph::addValue(int x, int y)
     }
     else
     {
-        int index = findX(x);
         assert(points[index].x >= x && "Bug in binary search algorithm");
         if (points[index].x > x)
         {
@@ -307,10 +307,13 @@ void AbstractGraph::setNumPoints(int numPointsUsed)
 
 void AbstractGraph::invalidateLineFromIndex(int index)
 {
-    invalidateRectContainingIndices(index, index + 1);
-    if (linkedGraph)
+    if (index >= 0 && index < numPointsUsed - 1)
     {
-        linkedGraph->invalidateLineFromIndex(index);
+        invalidateRectContainingIndices(index, index + 1);
+	if (linkedGraph)
+	{
+	    linkedGraph->invalidateLineFromIndex(index);
+	}
     }
 }
 
