@@ -47,7 +47,7 @@ public:
 private:
     int tickCounter;
 
-    Image background; 
+    Image background;
     Graph graph;
 };
 

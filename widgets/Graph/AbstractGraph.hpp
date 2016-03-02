@@ -37,7 +37,7 @@ public:
          * @fn GraphPoint::GraphPoint()
          *
          * @brief Default constructor.
-         *        
+         *
          *        Default constructor.
          */
         GraphPoint()
@@ -53,7 +53,7 @@ public:
      * @fn AbstractGraph::AbstractGraph()
      *
      * @brief Constructs a new NewGraph.
-     *        
+     *
      *        Constructs a new NewGraph.
      */
     AbstractGraph();
@@ -62,7 +62,7 @@ public:
      * @fn virtual AbstractGraph::~AbstractGraph()
      *
      * @brief Virtual Destructor.
-     *        
+     *
      *        Virtual Destructor. Not used.
      */
     virtual ~AbstractGraph();
@@ -71,7 +71,7 @@ public:
      * @fn CWRUtil::Q5 AbstractGraph::widgetX(int x) const;
      *
      * @brief Calculate Widget x coordinate.
-     *        
+     *
      *        Calculate widget x coordinate from a graph x coordinate.
      *
      * @param x The x coordinate.
@@ -84,7 +84,7 @@ public:
      * @fn CWRUtil::Q5 AbstractGraph::widgetY(int y) const;
      *
      * @brief Calculate Widget y coordinate.
-     *        
+     *
      *        Calculate widget y coordinate from a graph y coordinate.
      *
      * @param y The y coordinate.
@@ -97,7 +97,7 @@ public:
      * @fn CWRUtil::Q5 AbstractGraph::widgetXindex(int index) const;
      *
      * @brief Calculate Widget x coordinate of the index'th point.
-     *        
+     *
      *        Calculate widget x coordinate of the index'th point.
      *
      * @param index The index.
@@ -110,7 +110,7 @@ public:
      * @fn CWRUtil::Q5 AbstractGraph::widgetYindex(int index) const;
      *
      * @brief Calculate Widget y coordinate of the index'th point.
-     *        
+     *
      *        Calculate widget y coordinate of the index'th point.
      *
      * @param index The index.
@@ -123,19 +123,19 @@ public:
      * @fn void AbstractGraph::setBuffer(GraphPoint *pointsBuffer, int numPointsInBuffer)
      *
      * @brief Sets a buffer to be used to store points on the graph line.
-     *        
+     *
      *        Sets a buffer to be used to store points on the graph line.
      *
      * @param [in] pointsBuffer If non-null, buffer for points data.
      * @param numPointsInBuffer Number of points in buffers.
      */
-    void setBuffer(GraphPoint *pointsBuffer, int numPointsInBuffer);
+    void setBuffer(GraphPoint* pointsBuffer, int numPointsInBuffer);
 
     /**
      * @fn void AbstractGraph::setLinkedGraph(AbstractGraph &other);
      *
      * @brief Sets linked graph.
-     *        
+     *
      *        Sets linked graph which is updated when necessary. Invalidation etc is also
      *        handled. Linked graphs share the memory used for graph points and will thus
      *        reduce memory requirements.
@@ -144,13 +144,13 @@ public:
      *
      * @param [in] other The other graph to link to.
      */
-    void setLinkedGraph(AbstractGraph &other);
+    void setLinkedGraph(AbstractGraph& other);
 
     /**
      * @fn void AbstractGraph::setRange(int newLeft, int newRight, int newTop, int newBottom)
      *
      * @brief Sets the range of the graph.
-     *        
+     *
      *        Sets the range of the graph.
      *
      * @param newLeft   The x value at the left of the graph area.
@@ -167,7 +167,10 @@ public:
      *
      * @return The x value at the left of the graph area.
      */
-    int getRangeLeft() { return left; }
+    int getRangeLeft()
+    {
+        return left;
+    }
 
     /**
      * @fn int AbstractGraph::getRangeRight()
@@ -176,7 +179,10 @@ public:
      *
      * @return The x value at the right of the graph area.
      */
-    int getRangeRight() { return right; }
+    int getRangeRight()
+    {
+        return right;
+    }
 
     /**
      * @fn int AbstractGraph::getRangeBottom()
@@ -185,22 +191,28 @@ public:
      *
      * @return The y value at the bottom of the graph area.
      */
-    int getRangeBottom() { return bottom; }
+    int getRangeBottom()
+    {
+        return bottom;
+    }
 
-     /**
-      * @fn int AbstractGraph::getRangeTop()
-      *
-      * @brief Gets the y value at the top of the graph area.
-      *
-      * @return The y value at the top of the graph area.
-      */
-     int getRangeTop() { return top; }
+    /**
+     * @fn int AbstractGraph::getRangeTop()
+     *
+     * @brief Gets the y value at the top of the graph area.
+     *
+     * @return The y value at the top of the graph area.
+     */
+    int getRangeTop()
+    {
+        return top;
+    }
 
     /**
      * @fn virtual void Drawable::setX(int16_t x)
      *
      * @brief Sets the x coordinate of this drawable.
-     *        
+     *
      *        Sets the x coordinate of this drawable.
      *
      * @note Changing this does not automatically yield a redraw.
@@ -213,7 +225,7 @@ public:
      * @fn virtual void Drawable::setY(int16_t y)
      *
      * @brief Sets the y coordinate of this drawable.
-     *        
+     *
      *        Sets the y coordinate of this drawable.
      *
      * @note Changing this does not automatically yield a redraw.
@@ -226,7 +238,7 @@ public:
      * @fn virtual void AbstractGraph::setWidth(int16_t width)
      *
      * @brief Sets the width of this drawable.
-     *        
+     *
      *        Sets the width of this drawable.
      *
      * @note Changing this does not automatically yield a redraw.
@@ -239,7 +251,7 @@ public:
      * @fn virtual void AbstractGraph::setHeight(int16_t height)
      *
      * @brief Sets the height of this drawable.
-     *        
+     *
      *        Sets the height of this drawable.
      *
      * @note Changing this does not automatically yield a redraw.
@@ -252,8 +264,8 @@ public:
      * @fn template <class T> void AbstractGraph::setLineWidth(T width)
      *
      * @brief Sets the width for this graph line in pixels.
-     *        
-     *        Sets the width for this graph line in pixels. 
+     *
+     *        Sets the width for this graph line in pixels.
      *
      * @note The graph line is invalidated.
      *
@@ -264,7 +276,10 @@ public:
     void setLineWidth(T width)
     {
         CWRUtil::Q5 newLineWidth = CWRUtil::toQ5(width);
-        if (lineWidth == newLineWidth) return;
+        if (lineWidth == newLineWidth)
+        {
+            return;
+        }
 
         lineWidth = newLineWidth;
 
@@ -278,7 +293,7 @@ public:
      * @fn template <class T> T AbstractGraph::getLineWidth() const
      *
      * @brief Gets line width in pixels.
-     *        
+     *
      *        Gets line width in pixels.
      *
      * @tparam T Generic type parameter.
@@ -288,7 +303,7 @@ public:
     template <class T>
     T getLineWidth() const
     {
-        return int(lineWidth)/T(Rasterizer::POLY_BASE_SIZE);
+        return int(lineWidth) / T(Rasterizer::POLY_BASE_SIZE);
     }
 
     /**
@@ -304,7 +319,7 @@ public:
      * @fn virtual bool AbstractGraph::addValue(int x, int y)
      *
      * @brief Adds a value to the graph.
-     *        
+     *
      *        Adds a value to the graph.
      *
      * @note The updated graph line is invalidated.
@@ -320,7 +335,7 @@ public:
      * @fn virtual bool AbstractGraph::deleteValue(int x)
      *
      * @brief Deletes the value on the graph line at the given x coordinate.
-     *        
+     *
      *        Deletes the value on the graph line at the given x coordinate.
      *
      * @param x The x coordinate.
@@ -333,7 +348,7 @@ public:
      * @fn virtual bool AbstractGraph::drawCanvasWidget(const Rect& invalidatedArea) const
      *
      * @brief Draw the graph line.
-     *        
+     *
      *        Draw the graph line. Care is taken not to spend time drawing graphs lines
      *        that are outside the invalidated area.
      *
@@ -352,7 +367,7 @@ protected:
      * @fn Rect AbstractGraph::updateCacheForLinesBetweenIndeces(int firstIndex, int lastIndex)
      *
      * @brief Updates the NewGraph cache for one element.
-     *        
+     *
      *        The cache is used to be able to quickly redraw the graph line without
      *        calculating the slope of all the lines that make up the graph line.
      *
@@ -373,10 +388,10 @@ protected:
      */
     virtual Rect getMinimalRect() const;
 
-    AbstractGraph *linkedGraph; ///< Graph sharing data with this graph. Updated when setting range, changing values etc.
+    AbstractGraph* linkedGraph; ///< Graph sharing data with this graph. Updated when setting range, changing values etc.
 
     int         left, right, top, bottom; ///< Limits of the values of the graph line area
-    GraphPoint *points;                   ///< Pointer to buffer where the coordinates are stored
+    GraphPoint* points;                   ///< Pointer to buffer where the coordinates are stored
     int         maxPoints;                ///< Maximum number of points possible on graph line
     int         numPoints;                ///< Number of points currently in use
     CWRUtil::Q5 lineWidth;                ///< Line with (0=fill below graph line)
@@ -389,7 +404,7 @@ protected:
      * @fn void AbstractGraph::setNumPoints(int numPointsUsed)
      *
      * @brief Sets number of used points.
-     *        
+     *
      *        Sets number of used points, synchronize with linked graph.
      *
      * @param numPointsUsed The number of used points.
@@ -400,7 +415,7 @@ protected:
      * @fn void AbstractGraph::invalidateLineFromIndex(int index)
      *
      * @brief Invalidate line from index to index+1.
-     *        
+     *
      *        Invalidate line from index to index+1.
      *
      * @param index Zero-based index of the left end point.
@@ -411,7 +426,7 @@ protected:
      * @fn void AbstractGraph::insertPointAtIndex(int index)
      *
      * @brief Inserts a point at the given index.
-     *        
+     *
      *        There is only made room for the point, by moving all points after the given
      *        index one index up.
      *
@@ -423,7 +438,7 @@ protected:
      * @fn void AbstractGraph::deletePointAtIndex(int index)
      *
      * @brief Deletes the point at the given index.
-     *        
+     *
      *        Deletes the point at the given index.
      *
      * @param index Zero-based index of the point.
@@ -434,7 +449,7 @@ protected:
      * @fn int AbstractGraph::findX(int x)
      *
      * @brief Searches for the given x coordinate.
-     *        
+     *
      *        Searches for the given x coordinate. If the x coordinate is not found, the
      *        closest index is returned so that the point at the returned index has the
      *        first x value higher than the sought x coordinate (or at usedPoints if the x
@@ -447,21 +462,45 @@ protected:
     virtual int findX(int x);
 
     // A handful of functions to get the Q5 coordinates of the corners of the line segments making up the line
-    CWRUtil::Q5 xAboveOutgoing(int index) const { return widgetXindex(index) + points[index].dy; }
-    CWRUtil::Q5 yAboveOutgoing(int index) const { return widgetYindex(index) - points[index].dx; }
-    CWRUtil::Q5 xBelowOutgoing(int index) const { return widgetXindex(index) - points[index].dy; }
-    CWRUtil::Q5 yBelowOutgoing(int index) const { return widgetYindex(index) + points[index].dx; }
-    CWRUtil::Q5 xAboveIncoming(int index) const { return widgetXindex(index) + points[index-1].dy; }
-    CWRUtil::Q5 yAboveIncoming(int index) const { return widgetYindex(index) - points[index-1].dx; }
-    CWRUtil::Q5 xBelowIncoming(int index) const { return widgetXindex(index) - points[index-1].dy; }
-    CWRUtil::Q5 yBelowIncoming(int index) const { return widgetYindex(index) + points[index-1].dx; }
+    CWRUtil::Q5 xAboveOutgoing(int index) const
+    {
+        return widgetXindex(index) + points[index].dy;
+    }
+    CWRUtil::Q5 yAboveOutgoing(int index) const
+    {
+        return widgetYindex(index) - points[index].dx;
+    }
+    CWRUtil::Q5 xBelowOutgoing(int index) const
+    {
+        return widgetXindex(index) - points[index].dy;
+    }
+    CWRUtil::Q5 yBelowOutgoing(int index) const
+    {
+        return widgetYindex(index) + points[index].dx;
+    }
+    CWRUtil::Q5 xAboveIncoming(int index) const
+    {
+        return widgetXindex(index) + points[index - 1].dy;
+    }
+    CWRUtil::Q5 yAboveIncoming(int index) const
+    {
+        return widgetYindex(index) - points[index - 1].dx;
+    }
+    CWRUtil::Q5 xBelowIncoming(int index) const
+    {
+        return widgetXindex(index) - points[index - 1].dy;
+    }
+    CWRUtil::Q5 yBelowIncoming(int index) const
+    {
+        return widgetYindex(index) + points[index - 1].dx;
+    }
 
 private:
     /**
      * @fn void AbstractGraph::assignRange(int newLeft, int newRight, int newTop, int newBottom)
      *
      * @brief Sets the range of the graph.
-     *        
+     *
      *        Sets the range of the graph.
      *
      * @param newLeft   The value at the left of the graph area.
@@ -475,7 +514,7 @@ private:
      * @fn virtual void AbstractGraph::assignWidth(int16_t width)
      *
      * @brief Sets the width of this drawable.
-     *        
+     *
      *        Sets the width of this drawable.
      *
      * @note Changing this does not automatically yield a redraw.
@@ -488,7 +527,7 @@ private:
      * @fn virtual void AbstractGraph::assignHeight(int16_t height)
      *
      * @brief Sets the height of this drawable.
-     *        
+     *
      *        Sets the height of this drawable.
      *
      * @note Changing this does not automatically yield a redraw.

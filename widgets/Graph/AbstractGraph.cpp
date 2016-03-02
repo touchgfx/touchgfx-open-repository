@@ -3,7 +3,7 @@
 using namespace touchgfx;
 
 AbstractGraph::AbstractGraph() :
-    CanvasWidget(), linkedGraph(0), left(-1), right(-1), top(-1), bottom(-1), points(0), maxPoints(0), lineWidth(0) 
+    CanvasWidget(), linkedGraph(0), left(-1), right(-1), top(-1), bottom(-1), points(0), maxPoints(0), lineWidth(0)
 {
     clearGraph();
 }
@@ -12,15 +12,21 @@ AbstractGraph::~AbstractGraph()
 {
 }
 
-CWRUtil::Q5 AbstractGraph::widgetX(int x) const 
+CWRUtil::Q5 AbstractGraph::widgetX(int x) const
 {
-    if (graphWidth == 0) return CWRUtil::toQ5(0);
+    if (graphWidth == 0)
+    {
+        return CWRUtil::toQ5(0);
+    }
     return CWRUtil::toQ5(x - left) * widgetWidth / graphWidth;
 }
 
 CWRUtil::Q5 AbstractGraph::widgetY(int y) const
 {
-    if (graphHeight == 0) return CWRUtil::toQ5(0);
+    if (graphHeight == 0)
+    {
+        return CWRUtil::toQ5(0);
+    }
     return CWRUtil::toQ5(y - top) * widgetHeight / graphHeight;
 }
 
@@ -34,7 +40,7 @@ CWRUtil::Q5 AbstractGraph::widgetYindex(int index) const
     return widgetY(points[index].y);
 }
 
-void AbstractGraph::setBuffer(GraphPoint *pointsBuffer, int numPointsInBuffer)
+void AbstractGraph::setBuffer(GraphPoint* pointsBuffer, int numPointsInBuffer)
 {
     points = pointsBuffer;
     maxPoints = numPointsInBuffer;
@@ -45,7 +51,7 @@ void AbstractGraph::setBuffer(GraphPoint *pointsBuffer, int numPointsInBuffer)
     }
 }
 
-void AbstractGraph::setLinkedGraph(AbstractGraph &other)
+void AbstractGraph::setLinkedGraph(AbstractGraph& other)
 {
     if (linkedGraph == &other)
     {
@@ -93,7 +99,7 @@ void AbstractGraph::setY(int16_t y)
 }
 
 void AbstractGraph::setWidth(int16_t width)
-{ 
+{
     assignWidth(width);
     if (numPoints > 0)
     {
@@ -121,12 +127,13 @@ void AbstractGraph::clearGraph()
 
 bool AbstractGraph::addValue(int x, int y)
 {
-    if (numPoints >= maxPoints)
+    int index = findX(x);
+    if ((numPoints >= maxPoints) && (points[index].x != x))
     {
         return false;
     }
 
-    if (numPoints == 0 || x > points[numPoints-1].x)
+    if (numPoints == 0 || x > points[numPoints - 1].x)
     {
         // Point added at end of graph line
         points[numPoints].x = x;
@@ -136,7 +143,6 @@ bool AbstractGraph::addValue(int x, int y)
     }
     else
     {
-        int index = findX(x);
         assert(points[index].x >= x && "Bug in binary search algorithm");
         if (points[index].x > x)
         {
@@ -150,11 +156,11 @@ bool AbstractGraph::addValue(int x, int y)
         else // (points[index].x == x)
         {
             // Point with given X already exists in graph line, replace it (unless the
-            // exact same point was already there) 
+            // exact same point was already there)
             if (points[index].y != y)
             {
                 // New Y value, so update the point on the graph line
-                invalidateLineFromIndex(index-1);
+                invalidateLineFromIndex(index - 1);
                 invalidateLineFromIndex(index);
                 points[index].x = x; // Actually not necessary
                 points[index].y = y;
@@ -173,7 +179,7 @@ bool AbstractGraph::deleteValue(int x)
         // Point with given X found in graph line
         if (index > 0)
         {
-            invalidateLineFromIndex(index-1);
+            invalidateLineFromIndex(index - 1);
         }
         invalidateLineFromIndex(index);
         deletePointAtIndex(index);
@@ -199,25 +205,25 @@ bool AbstractGraph::drawCanvasWidget(const Rect& invalidatedArea) const
 
     // We can skip the line from index if the left part of the line at index+1 is to the left of the invalidated area
     while (firstIndex < lastIndex &&
-            invalidatedArea.x > (widgetXindex(firstIndex+1) + lineWidth/2).to<int>())
+            invalidatedArea.x > (widgetXindex(firstIndex + 1) + lineWidth / 2).to<int>())
     {
         firstIndex++;
     }
     // We can skip the line from index if the left part of the line at index-1 is to the right of the invalidated area
     while (lastIndex > firstIndex &&
-            invalidatedArea.right() < (widgetXindex(lastIndex-1) - lineWidth/2).to<int>())
+            invalidatedArea.right() < (widgetXindex(lastIndex - 1) - lineWidth / 2).to<int>())
     {
         lastIndex--;
     }
     if (firstIndex < lastIndex)
     {
         Canvas canvas(this, invalidatedArea);
-        canvas.moveTo(xAboveOutgoing(firstIndex  ), yAboveOutgoing(firstIndex  ));
-        canvas.lineTo(xAboveIncoming(firstIndex+1), yAboveIncoming(firstIndex+1));
+        canvas.moveTo(xAboveOutgoing(firstIndex), yAboveOutgoing(firstIndex));
+        canvas.lineTo(xAboveIncoming(firstIndex + 1), yAboveIncoming(firstIndex + 1));
         for (int index = firstIndex + 1; index < lastIndex; index++)
         {
-            canvas.lineTo(xAboveOutgoing(index  ), yAboveOutgoing(index  ));
-            canvas.lineTo(xAboveIncoming(index+1), yAboveIncoming(index+1));
+            canvas.lineTo(xAboveOutgoing(index), yAboveOutgoing(index));
+            canvas.lineTo(xAboveIncoming(index + 1), yAboveIncoming(index + 1));
         }
         if (lineWidth == 0)
         {
@@ -236,10 +242,10 @@ bool AbstractGraph::drawCanvasWidget(const Rect& invalidatedArea) const
         }
         else
         {
-            for (int index = lastIndex-1; index >= firstIndex; index--)
+            for (int index = lastIndex - 1; index >= firstIndex; index--)
             {
-                canvas.lineTo(xBelowIncoming(index+1), yBelowIncoming(index+1));
-                canvas.lineTo(xBelowOutgoing(index  ), yBelowOutgoing(index  ));
+                canvas.lineTo(xBelowIncoming(index + 1), yBelowIncoming(index + 1));
+                canvas.lineTo(xBelowOutgoing(index), yBelowOutgoing(index));
             }
         }
         return canvas.render();
@@ -260,11 +266,20 @@ void AbstractGraph::invalidateRectContainingIndices(int firstIndex, int lastInde
 
 void AbstractGraph::updateAndInvalidateCacheForLinesBetweenIndeces(int firstIndex, int lastIndex)
 {
-    if (firstIndex < 0) firstIndex = 0;
-    if (lastIndex >= numPoints) lastIndex = numPoints - 1;
-    if (firstIndex > lastIndex) return;
+    if (firstIndex < 0)
+    {
+        firstIndex = 0;
+    }
+    if (lastIndex >= numPoints)
+    {
+        lastIndex = numPoints - 1;
+    }
+    if (firstIndex > lastIndex)
+    {
+        return;
+    }
 
-    if (getWidth() == 0 || getHeight() == 0 || left == right ||top == bottom)
+    if (getWidth() == 0 || getHeight() == 0 || left == right || top == bottom)
     {
         // No width or no height
         return;
@@ -273,9 +288,9 @@ void AbstractGraph::updateAndInvalidateCacheForLinesBetweenIndeces(int firstInde
     // Calculate the slopes of all lines
     for (int index = firstIndex; index < lastIndex; index++)
     {
-        CWRUtil::Q5 dy = (widgetYindex(index+1) - widgetYindex(index));
-        CWRUtil::Q5 dx = (widgetXindex(index+1) - widgetXindex(index));
-        CWRUtil::Q5 d = CWRUtil::sqrtQ10(dy*dy+dx*dx);
+        CWRUtil::Q5 dy = (widgetYindex(index + 1) - widgetYindex(index));
+        CWRUtil::Q5 dx = (widgetXindex(index + 1) - widgetXindex(index));
+        CWRUtil::Q5 d = CWRUtil::sqrtQ10(dy * dy + dx * dx);
 
         if (d != 0) // Should not happen, but if range is zero high/wide it does
         {
@@ -291,9 +306,9 @@ Rect AbstractGraph::getMinimalRect() const
 {
     if (numPoints < 1 || graphWidth == 0 || graphHeight == 0)
     {
-        return Rect(0,0,0,0);
+        return Rect(0, 0, 0, 0);
     }
-    return getMinimalRectContainingIndices(0, numPoints-1);
+    return getMinimalRectContainingIndices(0, numPoints - 1);
 }
 
 void AbstractGraph::setNumPoints(int numPointsUsed)
@@ -307,10 +322,13 @@ void AbstractGraph::setNumPoints(int numPointsUsed)
 
 void AbstractGraph::invalidateLineFromIndex(int index)
 {
-    invalidateRectContainingIndices(index, index + 1);
-    if (linkedGraph)
+    if (index >= 0 && index < numPointsUsed - 1)
     {
-        linkedGraph->invalidateLineFromIndex(index);
+        invalidateRectContainingIndices(index, index + 1);
+        if (linkedGraph)
+        {
+            linkedGraph->invalidateLineFromIndex(index);
+        }
     }
 }
 
@@ -338,14 +356,14 @@ void AbstractGraph::deletePointAtIndex(int index)
 int AbstractGraph::findX(int x)
 {
     // No points, or x larger than all existing x coordinates
-    if (numPoints == 0 || x > points[numPoints-1].x)
+    if (numPoints == 0 || x > points[numPoints - 1].x)
     {
         return numPoints;
     }
 
     // Setup search limits
     int loIndex = 0;
-    int hiIndex = numPoints-1;
+    int hiIndex = numPoints - 1;
     while (loIndex <= hiIndex)
     {
         int midIndex = (loIndex + hiIndex) / 2;
@@ -387,7 +405,7 @@ void AbstractGraph::assignRange(int newLeft, int newRight, int newTop, int newBo
 }
 
 void AbstractGraph::assignWidth(int16_t width)
-{ 
+{
     CanvasWidget::setWidth(width);
     widgetWidth = CWRUtil::toQ5(getWidth());
     if (linkedGraph)

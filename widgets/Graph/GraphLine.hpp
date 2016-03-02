@@ -26,7 +26,7 @@ public:
      * @fn virtual bool GraphLine::drawCanvasWidget(const Rect& invalidatedArea) const;
      *
      * @brief Draw the graph line.
-     *        
+     *
      *        Draw the graph line. Care is taken not to spend time drawing graph lines that are
      *        outside the invalidated area.
      *
@@ -41,7 +41,7 @@ protected:
      * @fn virtual Rect GraphLine::getMinimalRectContainingIndices(int firstIndex, int lastIndex) const;
      *
      * @brief Gets minimal rectangle containing line between the given indices.
-     *        
+     *
      *        Gets minimal rectangle containing line between the given indices. Line width is
      *        taken into account to get the right rectangle.
      *

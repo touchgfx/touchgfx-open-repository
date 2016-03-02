@@ -14,6 +14,11 @@ TouchGFX Version
 
 This widget was created and tested using TouchGFX version 4.3.0
 
+For use with TouchGFX verson 4.5.0 and up, please change the signature
+for Graph::setup (to support 24bit color depth) to this:
+
+  void Graph::setup(int newWidth, int newHeight, colortype lineColor)
+
 Functional description
 ======================
 
