@@ -1,0 +1,18 @@
+#ifndef <%= TheName.upcase %>_VIEW_HPP
+#define <%= TheName.upcase %>_VIEW_HPP
+
+#include <mvp/View.hpp>
+#include <gui/<%= the_name %>_screen/<%= TheName %>Presenter.hpp>
+
+using namespace touchgfx;
+
+class <%= TheName %>View : public View<<%= TheName %>Presenter>
+{
+public:
+    <%= TheName %>View();
+    virtual ~<%= TheName %>View();
+    virtual void setupScreen();
+    virtual void tearDownScreen();
+};
+
+#endif
