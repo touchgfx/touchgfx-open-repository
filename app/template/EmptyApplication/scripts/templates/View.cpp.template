@@ -1,0 +1,23 @@
+#include <gui/<%= the_name %>_screen/<%= TheName %>View.hpp>
+#include <BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
+
+<%= TheName %>View::<%= TheName %>View()
+{
+    
+}
+
+<%= TheName %>View::~<%= TheName %>View()
+{
+    
+}
+
+void <%= TheName %>View::setupScreen()
+{
+
+}
+
+void <%= TheName %>View::tearDownScreen()
+{
+
+}

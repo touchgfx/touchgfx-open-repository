@@ -1,0 +1,17 @@
+#include <gui/<%= the_name %>_screen/<%= TheName %>Presenter.hpp>
+#include <gui/<%= the_name %>_screen/<%= TheName %>View.hpp>
+
+<%= TheName %>Presenter::<%= TheName %>Presenter(<%= TheName %>View& v)
+    : view(v)
+{
+}
+
+void <%= TheName %>Presenter::activate()
+{
+  
+}
+
+void <%= TheName %>Presenter::deactivate()
+{
+
+}

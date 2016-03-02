@@ -1,0 +1,10 @@
+void FrontendApplication::goto<%= TheName %>()
+{ 
+    transitionCallback = Callback< FrontendApplication >(this, &FrontendApplication::goto<%= TheName %>Impl);
+    pendingScreenTransitionCallback = &transitionCallback;
+}
+
+void FrontendApplication::goto<%= TheName %>Impl()
+{
+    makeTransition< <%= TheName %>View, <%= TheName %>Presenter, NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+}

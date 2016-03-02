@@ -1,0 +1,24 @@
+#ifndef <%= TheName.upcase %>_PRESENTER_HPP
+#define <%= TheName.upcase %>_PRESENTER_HPP
+
+#include <mvp/Presenter.hpp>
+#include <gui/model/ModelListener.hpp>
+
+using namespace touchgfx;
+
+class <%= TheName %>View;
+
+class <%= TheName %>Presenter : public Presenter, public ModelListener
+{
+public:
+    <%= TheName %>Presenter(<%= TheName %>View& v);
+    virtual void activate();
+    virtual void deactivate();
+    virtual ~<%= TheName %>Presenter() {};
+private:
+    <%= TheName %>Presenter();
+
+    <%= TheName %>View& view;
+};
+
+#endif
