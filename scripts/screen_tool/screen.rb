@@ -61,7 +61,7 @@ end
 name = ARGV.shift
 
 if name.match(/[^A-Za-z]/)
-    puts "screen name should contain A-Z, a-z characters"; exit
+    puts "screen name must consist of characters A-Z and a-z only"; exit
 end
 
 the_name = name.snake_case
