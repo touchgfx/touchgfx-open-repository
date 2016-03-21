@@ -33,3 +33,6 @@ generated
 *.suo
 *.user
 *.opensdf
+
+# the touchgfx folder
+touchgfx

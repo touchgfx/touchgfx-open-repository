@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<flash_device>
+  <exe>$PROJ_DIR$\\QSPI.out</exe>
+  <page>256</page>
+  <block>256 0x00010000</block>
+  <flash_base>0x00000000</flash_base>
+  <macro>$PROJ_DIR$\QSPI.mac</macro>
+  <aggregate>1</aggregate>
+</flash_device>
