@@ -20,10 +20,8 @@ ValueSelector::ValueSelector() :
     knob.setXY(0, background.getY() + 2);
     add(knob);
 
-    knobOffset = knob.getWidth() / 2;
-
     setWidth(background.getWidth());
-    setHeight(background.getHeight() + 2 * VERTICAL_HEIGHT_SPACING); 
+    setHeight(background.getHeight() + 2 * VERTICAL_HEIGHT_SPACING);
 
     setTouchable(true);
     setValueRange(0, 100); // Set default value range
@@ -53,6 +51,7 @@ void ValueSelector::handleDragEvent(const DragEvent& evt)
 
 void ValueSelector::setBarSize(int16_t xClickPosition)
 {
+    int knobOffset = knob.getWidth() / 2;
     int barWidth = MIN(MAX(0, xClickPosition - knobOffset), bar.getWidth());
 
     // Adjust the visible part of the bar

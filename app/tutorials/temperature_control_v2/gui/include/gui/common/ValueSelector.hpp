@@ -40,14 +40,14 @@ public:
 
     /**
      * Get the current value.
-     * 
+     *
      * @return The current value.
      */
     int getValue();
 
 private:
     // Vertical spacing that increases the height of the value selector and thereby the touch area
-    static const int VERTICAL_HEIGHT_SPACING = 10;  
+    static const int VERTICAL_HEIGHT_SPACING = 10;
 
     int minValue;
     int maxValue;
@@ -57,10 +57,8 @@ private:
     Image knob;
     Container barViewport;
 
-    int knobOffset;
-
     int currentValue;
-    GenericCallback<const ValueSelector&, int>* newValueCallback;    
+    GenericCallback<const ValueSelector&, int>* newValueCallback;
 
     void setBarSize(int16_t xValue);
 

@@ -34,5 +34,6 @@ generated
 *.user
 *.opensdf
 
-# the touchgfx folder
+# folders
 touchgfx
+app/tutorials/temperature_control_v*/build
