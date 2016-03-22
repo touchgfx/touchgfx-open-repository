@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{950077A1-120F-497B-AECD-88233AD6EA95}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{C736C615-34AA-48DC-ADDE-4B3393FFBA77}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{BF22B89E-771C-49AD-841E-A4AA568124CC}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;ttf;otf;bdf;png;wav;xlsx;props;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{5C0122CA-5441-4E6E-925D-0BFBE15F19B1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\model">
+      <UniqueIdentifier>{FDAE8BBA-2492-4543-8A49-BC5585CD6D1B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\template_screen">
+      <UniqueIdentifier>{33302524-7F69-49B2-92A5-7D3F338DEFF2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{C16B966C-F3AA-414C-BB15-90242DD45D55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\template_screen">
+      <UniqueIdentifier>{C1E86857-082F-4E83-AF1A-AECCB90EEA25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\simulator">
+      <UniqueIdentifier>{86B16DEB-570A-4200-8264-D27117B679D9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\fonts">
+      <UniqueIdentifier>{05917C7B-11A8-440F-B062-DA4B1523BA09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\images">
+      <UniqueIdentifier>{89E60106-675E-403B-BACA-370CF6C34595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\texts">
+      <UniqueIdentifier>{077B8656-BEA0-4584-B554-62306CFC722D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\gui\src\common\FrontendApplication.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\common\ValueSelector.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\template_screen\TemplatePresenter.cpp">
+      <Filter>Source Files\template_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\template_screen\TemplateView.cpp">
+      <Filter>Source Files\template_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\simulator\main.cpp">
+      <Filter>Source Files\simulator</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\fonts\Exo2-Light.ttf">
+      <Filter>Resource Files\fonts</Filter>
+    </None>
+    <None Include="..\..\assets\images\knob.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\knob_grey.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\knob_with_background.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\reset_button.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\reset_button_inactive.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\reset_button_pressed.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\settings_background.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\value_selector_background.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\value_selector_background_grey.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\value_selector_background_with_background.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\value_selector_bar.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\images\value_selector_bar_grey.png">
+      <Filter>Resource Files\images</Filter>
+    </None>
+    <None Include="..\..\assets\texts\texts.xlsx">
+      <Filter>Resource Files\texts</Filter>
+    </None>
+    <None Include="..\..\config\msvs\Application.props">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendApplication.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\FrontendHeap.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\common\ValueSelector.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\Model.hpp">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp">
+      <Filter>Header Files\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\template_screen\TemplatePresenter.hpp">
+      <Filter>Header Files\template_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\template_screen\TemplateView.hpp">
+      <Filter>Header Files\template_screen</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

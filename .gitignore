@@ -33,3 +33,7 @@ generated
 *.suo
 *.user
 *.opensdf
+
+# folders
+touchgfx
+app/tutorials/temperature_control_v*/build

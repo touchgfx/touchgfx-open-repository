@@ -1,0 +1,160 @@
+__setup()
+{
+__var Reg;
+
+  __hwReset(0);    
+  __message "---- setup device ----" ;
+
+  Reg = __readMemory32(0x40023838, "Memory");  // RCC.AHB3ENR enable QSPI
+  Reg |= (0x02UL);
+  __writeMemory32(Reg, 0x40023838, "Memory");
+
+  Reg = __readMemory32(0x40023830, "Memory");  // RCC.AHB1ENR enable GPIOB, GPIOD, GPIOE & GPIOF
+  Reg |= (0x3AUL);
+  __writeMemory32(Reg, 0x40023830, "Memory");
+
+  Reg = __readMemory32(0x40023818, "Memory");  // RCC.AHB3RSTR reset assert QSPI
+  Reg |= (0x02UL);
+  __writeMemory32(Reg, 0x40023818, "Memory");
+
+  Reg = __readMemory32(0x40023818, "Memory");  // RCC.AHB3RSTR reset release QSPI
+  Reg &= ~(0x02UL);
+  __writeMemory32(Reg, 0x40023818, "Memory");
+
+  /* CS pin */
+  Reg = __readMemory32(0x40020420, "Memory");  // GPIOB.AFR[0]
+  Reg &= ~(0x0FUL << 24);
+  Reg |=  (0x0AUL << 24);
+  __writeMemory32(Reg, 0x40020420, "Memory"); 
+
+  Reg = __readMemory32(0x40020400, "Memory");  // GPIOB.MODER
+  Reg &= ~(0x03UL << 12);
+  Reg |=  (0x02UL << 12);
+  __writeMemory32(Reg, 0x40020400, "Memory");
+  
+  Reg = __readMemory32(0x40020404, "Memory");  // GPIOB.OTYPER
+  Reg &= ~(1UL << 6);
+  __writeMemory32(Reg, 0x40020404, "Memory");
+
+  Reg = __readMemory32(0x40020408, "Memory");  // GPIOB.OSPEEDR
+  Reg |= (0x3UL << 12); 
+  __writeMemory32(Reg, 0x40020408, "Memory");  
+
+  Reg = __readMemory32(0x4002040C, "Memory");  // GPIOB.PUPDR
+  Reg &= ~(0x03UL << 12);
+  Reg |=  (0x01UL << 12);
+  __writeMemory32(Reg, 0x4002040C, "Memory");
+
+  /* CLK pin */
+  Reg = __readMemory32(0x40020420, "Memory");  // GPIOB.AFR[0]
+  Reg &= ~(0x0FUL << 8);
+  Reg |=  (0x09UL << 8);
+  __writeMemory32(Reg, 0x40020420, "Memory");
+
+  Reg = __readMemory32(0x40020400, "Memory");  // GPIOB.MODER
+  Reg &= ~(0x03UL << 4);
+  Reg |=  (0x02UL << 4);
+  __writeMemory32(Reg, 0x40020400, "Memory");
+
+  Reg = __readMemory32(0x40020404, "Memory");  // GPIOB.OTYPER
+  Reg &= ~(1UL << 2);
+  __writeMemory32(Reg, 0x40020404, "Memory");
+
+  Reg = __readMemory32(0x40020408, "Memory");  // GPIOB.OSPEEDR
+  Reg |= (0x3UL << 4); 
+  __writeMemory32(Reg, 0x40020408, "Memory");
+
+  Reg = __readMemory32(0x4002040C, "Memory");  // GPIOB.PUPDR
+  Reg &= ~(0x03UL << 4);
+  __writeMemory32(Reg, 0x4002040C, "Memory");
+
+  /* NEW ASSIGNMENT */
+  /* D0,D1,D3 pin */
+  Reg = __readMemory32(0x40020C24, "Memory");  // GPIOD.AFR[1]
+  Reg &= ~(0xFFFUL << 12); 
+  Reg |=  (0x999UL << 12);
+  __writeMemory32(Reg, 0x40020C24, "Memory");
+  
+  Reg = __readMemory32(0x40020C00, "Memory");  // GPIOD.MODER
+  Reg &= ~(0x3FUL << 22);
+  Reg |=  (0x2AUL << 22);
+  __writeMemory32(Reg, 0x40020C00, "Memory");
+  
+  Reg = __readMemory32(0x40020C04, "Memory");  // GPIOD.OTYPER
+  Reg &= ~(0x07UL << 11);
+  __writeMemory32(Reg, 0x40020C04, "Memory");
+  
+  Reg = __readMemory32(0x40020C08, "Memory");  // GPIOD.OSPEEDR
+  Reg |= (0x3FUL << 22); 
+  __writeMemory32(Reg, 0x40020C08, "Memory");
+  
+  Reg = __readMemory32(0x40020C0C, "Memory");  // GPIOD.PUPDR
+  Reg |= (0x3FUL << 22); 
+  __writeMemory32(Reg, 0x40020C0C, "Memory");
+  
+  /* D2 pin */
+  Reg = __readMemory32(0x40021020, "Memory");  // GPIOE.AFR[0]
+  Reg &= ~(0xFUL << 8); 
+  Reg |=  (0x9UL << 8);
+  __writeMemory32(Reg, 0x40021020, "Memory");
+  
+  Reg = __readMemory32(0x40021000, "Memory");  // GPIOE.MODER
+  Reg &= ~(0x3UL << 4);
+  Reg |=  (0x2UL << 4);
+  __writeMemory32(Reg, 0x40021000, "Memory");
+  
+  Reg = __readMemory32(0x40021004, "Memory");  // GPIOE.OTYPER
+  Reg &= ~(0x01UL << 2);
+  __writeMemory32(Reg, 0x40021004, "Memory");
+  
+  Reg = __readMemory32(0x40021008, "Memory");  // GPIOE.OSPEEDR
+  Reg |= (0x3UL << 4); 
+  __writeMemory32(Reg, 0x40021008, "Memory");
+  
+  Reg = __readMemory32(0x4002100C, "Memory");  // GPIOE.PUPDR
+  Reg |= (0x3UL << 4); 
+  __writeMemory32(Reg, 0x4002100C, "Memory");
+  
+  
+  /* OLD ASSIGNMENT */
+  /* D0-D3 pin */
+  /*Reg = __readMemory32(0x40021420, "Memory");  // GPIOF.AFR[0]                  //0x40020420
+  Reg &= ~(0xFFUL << 24); 
+  Reg |=  (0x99UL << 24);
+  __writeMemory32(Reg, 0x40021420, "Memory");
+
+  Reg = __readMemory32(0x40021424, "Memory");  // GPIOF.AFR[1]
+  Reg &= ~(0xFFUL);
+  Reg |=  (0xAAUL);
+  __writeMemory32(Reg, 0x40021424, "Memory");
+
+  Reg = __readMemory32(0x40021400, "Memory");  // GPIOF.MODER
+  Reg &= ~(0xFFUL << 12);
+  Reg |=  (0xAAUL << 12);
+  __writeMemory32(Reg, 0x40021400, "Memory");
+
+  Reg = __readMemory32(0x40021404, "Memory");  // GPIOF.OTYPER
+  Reg &= ~(0x0FUL << 6);
+  __writeMemory32(Reg, 0x40021404, "Memory");
+
+  Reg = __readMemory32(0x40021408, "Memory");  // GPIOF.OSPEEDR
+  Reg |= (0xFFUL << 12); 
+  __writeMemory32(Reg, 0x40021408, "Memory");
+
+  Reg = __readMemory32(0x4002140C, "Memory");  // GPIOF.PUPDR
+  Reg &= ~(0xFFUL << 12);
+  __writeMemory32(Reg, 0x4002140C, "Memory");*/
+
+}
+
+execUserFlashInit()
+{
+    __message"----- Prepare hardware for Flashloader -----\n";
+    __setup();
+}
+
+execUserPreload()
+{
+    __message"----- Prepare hardware for Flashloader -----\n";
+    __setup();
+}
