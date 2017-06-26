@@ -15,7 +15,11 @@ SwipeContainer::SwipeContainer() :
     currentScreen(0),
     endElasticWidth(30),
     dotIndicator(),
-    screens(EAST)
+    screens(EAST),
+    childFocus(0),
+    pressedX(0),
+    pressedY(0),
+    hasIssuedCancelEvent(false)
 {
     touchgfx::Application::getInstance()->registerTimerWidget(this);
 
@@ -131,6 +135,34 @@ void SwipeContainer::handleClickEvent(const ClickEvent& evt)
             }
         }
     }
+    // Check to see if any children should be notified of this event
+    if (evt.getType() == ClickEvent::PRESSED)
+    {
+        Container::getLastChild(evt.getX(), evt.getY(), &childFocus);
+        if (childFocus == this)
+        {
+            // If we found ourselves only, disregard
+            childFocus = 0;
+        }
+        if (childFocus)
+        {
+            // We found a child which was also interested in this click event.
+            // Delegate to the child
+            hasIssuedCancelEvent = false;
+            pressedX = evt.getX();
+            pressedY = evt.getY();
+            Rect r = childFocus->getAbsoluteRect();
+            ClickEvent relative(evt.getType(), evt.getX() + rect.x - r.x, evt.getY() + rect.y - r.y);
+            childFocus->handleClickEvent(relative);
+        }
+    }
+    else if  (childFocus && evt.getType() == ClickEvent::RELEASED)
+    {
+        Rect r = childFocus->getAbsoluteRect();
+        ClickEvent relative(evt.getType(), evt.getX() + rect.x - r.x, evt.getY() + rect.y - r.y);
+        childFocus->handleClickEvent(relative);
+        childFocus = 0;
+    }
 }
 
 void SwipeContainer::handleDragEvent(const DragEvent& evt)
@@ -143,6 +175,18 @@ void SwipeContainer::handleDragEvent(const DragEvent& evt)
     }
 
     dragX += evt.getDeltaX();
+
+    if (childFocus && !hasIssuedCancelEvent)
+    {
+        // If we have dragged further than the threshold, send a cancel event
+        // to the child, such that e.g. a button will no longer be pressed.
+        if (abs(dragX) > DRAG_CANCEL_THRESHOLD)
+        {
+            ClickEvent ce(ClickEvent::CANCEL, 0, 0);
+            childFocus->handleClickEvent(ce);
+            hasIssuedCancelEvent = true;
+        }
+    }
 
     // Do not show too much background next to end screens
     if (currentScreen == 0 && dragX > endElasticWidth)
@@ -170,6 +214,13 @@ void SwipeContainer::handleGestureEvent(const GestureEvent& evt)
         // Save current position for use during animation
         animateDistance = dragX;
         startX = screens.getX();
+
+        if (childFocus && !hasIssuedCancelEvent)
+        {
+            ClickEvent ce(ClickEvent::CANCEL, 0, 0);
+            childFocus->handleClickEvent(ce);
+            hasIssuedCancelEvent = true;
+        }
 
         if (evt.getVelocity() < 0  && currentScreen < getNumberOfScreens()-1)
         {
@@ -279,4 +330,11 @@ void SwipeContainer::animateRight()
     animationCounter++;
 }
 
-
+void SwipeContainer::getLastChild(int16_t x, int16_t y, Drawable** last)
+{
+    if (isTouchable())
+    {
+        // Hijack touch events - no do ask children.
+        *last = this;
+    }
+}

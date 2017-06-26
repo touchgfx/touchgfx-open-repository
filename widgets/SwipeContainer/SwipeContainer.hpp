@@ -114,7 +114,11 @@ public:
      */
     void setSelectedScreen(uint8_t screenIndex);
 
+    // To hijack touch events.
+    virtual void getLastChild(int16_t x, int16_t y, Drawable** last);
+    
 private:
+    static const int16_t DRAG_CANCEL_THRESHOLD = 3; //Pixels to drag before sending cancel event.
 
     enum States
     {
@@ -144,12 +148,18 @@ private:
 
     touchgfx::ListLayout screens;
 
+    Drawable* childFocus;
+    int16_t pressedX;
+    int16_t pressedY;
+    bool hasIssuedCancelEvent;
+    
     void adjustScreens();
 
     void animateSwipeCancelledLeft();
     void animateSwipeCancelledRight();
     void animateLeft();
     void animateRight();
+
 
 };
 
