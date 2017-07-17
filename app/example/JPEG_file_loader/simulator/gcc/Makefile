@@ -1,29 +1,69 @@
+###############################################################################
+#
+# @brief     This file is part of the TouchGFX 4.8.0 evaluation distribution.
+#
+# @author    Draupner Graphics A/S <http://www.touchgfx.com>
+#
+###############################################################################
+#
+# @section Copyright
+#
+# This file is free software and is provided for example purposes. You may
+# use, copy, and modify within the terms and conditions of the license
+# agreement.
+#
+# This is licensed software for evaluation use, any use must strictly comply
+# with the evaluation license agreement provided with delivery of the
+# TouchGFX software.
+#
+# The evaluation license agreement can be seen on www.touchgfx.com
+#
+# @section Disclaimer
+#
+# DISCLAIMER OF WARRANTY/LIMITATION OF REMEDIES: Draupner Graphics A/S has
+# no obligation to support this software. Draupner Graphics A/S is providing
+# the software "AS IS", with no express or implied warranties of any kind,
+# including, but not limited to, any implied warranties of merchantability
+# or fitness for any particular purpose or warranties against infringement
+# of any proprietary rights of a third party.
+#
+# Draupner Graphics A/S can not be held liable for any consequential,
+# incidental, or special damages, or any other relief, or for any claim by
+# any third party, arising from your use of this software.
+#
+###############################################################################
 # Get name of this Makefile
 makefile_name := $(lastword $(MAKEFILE_LIST))
 
 # Get path of this Makefile
-makefile_path := $(shell dirname "$(realpath $(makefile_name))")
+makefile_path := $(dir $(abspath $(makefile_name)))
 
 # Get path where the Application is
-application_path := $(realpath $(makefile_path)/../..)
+application_path := $(abspath $(makefile_path)/../..)
 
 # Change makefile_name to a relative path
-makefile_name := $(patsubst $(application_path)/%,%,$(realpath $(makefile_name)))
+makefile_name := $(patsubst $(application_path)/%,%,$(abspath $(makefile_name)))
 
 # Get identification of this system
+ifeq ($(OS),Windows_NT)
+UNAME := MINGW32_NT-6.2
+else
 UNAME := $(shell uname -s)
+endif
 
 board_name := $(UNAME)
 
 .PHONY: all clean assets
 
-ifneq ($(shell echo $(makefile_path) | wc -w | xargs echo),1)
+ifneq ($(words $(makefile_path))$(words $(MAKEFILE_LIST)),11)
+all: $(filter clean,$(MAKECMDGOALS))
 all clean assets:
 	@echo "************************************************"
 	@echo "** You cannot have spaces in your path, sorry **"
 	@echo "************************************************"
 else
 
+all: $(filter clean,$(MAKECMDGOALS))
 all clean assets:
 	@cd $(application_path) && $(MAKE) -r -f $(makefile_name) -s $(MFLAGS) _$@_
 
@@ -31,7 +71,7 @@ all clean assets:
 # Additional components can be added to this list. make will look for
 # source files recursively in comp_name/src and setup an include directive
 # for comp_name/include.
-components := gui simulator
+components := gui simulator generated/gui_generated
 
 # Location of folder containing bmp/png files.
 asset_images_input  := assets/images
@@ -53,44 +93,32 @@ asset_fonts_output := $(asset_root_path)/fonts
 asset_texts_output := $(asset_root_path)/texts
 
 #include application specific configuration
-include $(application_path)/config/gcc/app.mk
+-include $(application_path)/config/gcc/app.mk
 
 ### END OF USER SECTION. THE FOLLOWING SHOULD NOT BE MODIFIED ###
 
 ifeq ($(UNAME), Linux)
-include $(application_path)/$(touchgfx_path)/config/toolchain-linux.mk
-library_path := $(touchgfx_path)/lib/sdl/linux64
-libraries := SDL SDL_image SDLmain caca webp m pthread dl
+-include $(touchgfx_path)/config/toolchain-linux.mk
+library_path := $(touchgfx_path)/lib/sdl2/linux64 $(touchgfx_path)/lib/linux
+libraries := touchgfx SDL2 SDL2_image rt m pthread dl
 libstart := -Wl,--start-group
 libend := -Wl,--end-group
-library_includes += $(touchgfx_path)/framework/include/platform/hal/simulator/sdl/vendor/linux64
-linker_options_local := -Xlinker -rpath -Xlinker $(realpath $(touchgfx_path)/lib/sdl/linux64/)
+libextra :=
+library_includes += $(touchgfx_path)/framework/include/platform/hal/simulator/sdl2/vendor
+linker_options_local := -Xlinker -rpath -Xlinker $(abspath $(touchgfx_path)/lib/sdl2/linux64/)
 resource_file :=
 imageconvert_executable := $(touchgfx_path)/framework/tools/imageconvert/build/linux/imageconvert.out
 fontconvert_executable := $(touchgfx_path)/framework/tools/fontconvert/build/linux/fontconvert.out
 simulator_executable := simulator.out
 else
-ifeq ($(UNAME), Darwin)
-include $(application_path)/$(touchgfx_path)/config/toolchain-osx.mk
-sdl_library_path := $(touchgfx_path)/lib/sdl/osx
-library_path := $(sdl_library_path)
-libraries := SDLmain SDL m pthread dl
-libstart :=
-libend :=
-library_includes += $(touchgfx_path)/framework/include/platform/hal/simulator/sdl/vendor/osx
-linker_options_local := -Wl,-framework,OpenGL -Wl,-framework,Cocoa -Wl,-framework,ApplicationServices -Wl,-framework,Carbon -Wl,-framework,AudioToolbox -Wl,-framework,AudioUnit -Wl,-framework,IOKit
-resource_file :=
-imageconvert_executable := $(touchgfx_path)/framework/tools/imageconvert/build/osx/imageconvert.out
-fontconvert_executable := $(touchgfx_path)/framework/tools/fontconvert/build/osx/fontconvert.out
-simulator_executable := simulator.out
-else
-include $(application_path)/$(touchgfx_path)/config/toolchain-mingw32.mk
-sdl_library_path := $(touchgfx_path)/lib/sdl/win32
-library_path := $(sdl_library_path)
-libraries := SDL SDL_image SDLmain m pthread mingw32
+-include $(touchgfx_path)/config/toolchain-mingw32.mk
+sdl_library_path := $(touchgfx_path)/lib/sdl2/win32
+library_path := $(sdl_library_path) $(touchgfx_path)/lib/win/mingw32
+libraries := touchgfx SDL2 SDL2_image m pthread mingw32
 libstart := -Wl,--start-group
 libend := -Wl,--end-group
-library_includes += $(touchgfx_path)/framework/include/platform/hal/simulator/sdl/vendor/win32 #include SDL libs, not touchgfx
+libextra := -Wl,--subsystem,windows
+library_includes += $(touchgfx_path)/framework/include/platform/hal/simulator/sdl2/vendor
 resource_file := $(touchgfx_path)/config/touchgfx.res
 imageconvert_executable := $(touchgfx_path)/framework/tools/imageconvert/build/win/imageconvert.out
 fontconvert_executable := $(touchgfx_path)/framework/tools/fontconvert/build/win/fontconvert.out
@@ -101,20 +129,15 @@ $(resource_file): $(resource_file:%.res=%.rc) $(resource_file:%.res=%.ico)
 	@echo Creating Windows resource file with program icon
 	@windres $(resource_file:%.res=%.rc) -O coff -o $@
 endif
-endif
 
-include $(application_path)/$(touchgfx_path)/config/toolchain-strict.mk
+-include $(touchgfx_path)/config/toolchain-strict.mk
 
 #include everything + specific vendor folders
 framework_includes := $(touchgfx_path)/framework/include
 
 #only take in the source we want to build for this sim
-framework_source := $(touchgfx_path)/framework/source/touchgfx \
-	$(touchgfx_path)/framework/source/platform/hal/simulator/sdl \
-	$(touchgfx_path)/framework/source/platform/driver/lcd \
-	$(touchgfx_path)/framework/source/platform/driver/touch \
-	$(touchgfx_path)/framework/source/common
-
+framework_files := $(touchgfx_path)/framework/source/platform/driver/touch/SDL2TouchController.cpp
+framework_source := $(touchgfx_path)/framework/source/platform/hal/simulator/sdl2
 
 #this needs to change when assset include folder changes.
 all_components_except_images := $(components) \
@@ -125,10 +148,9 @@ all_components := $(all_components_except_images) \
 
 #keep framework include and source out of this
 include_paths := $(library_includes) $(foreach comp, $(all_components), $(comp)/include) $(framework_includes)
+source_paths = $(foreach comp, $(all_components_except_images), $(comp)/src) $(framework_source) simulator
 #include LibJPEG
 include_paths += $(application_path)/LibJPEG/include
-
-source_paths = $(foreach comp, $(all_components_except_images), $(comp)/src) $(framework_source) simulator
 
 # Finds files that matches the specified pattern. The directory list
 # is searched recursively. It is safe to invoke this function with an
@@ -168,7 +190,7 @@ fontconvert_font_files := $(fontconvert_ttf_lower_files) \
 			  $(fontconvert_bdf_lower_files) \
 			  $(fontconvert_bdf_upper_files)
 
-source_files := $(call find, $(source_paths),*.cpp) $(imageconvert_cpp_files) $(asset_images_output)/src/BitmapDatabase.cpp
+source_files := $(call find, $(source_paths),*.cpp) $(imageconvert_cpp_files) $(asset_images_output)/src/BitmapDatabase.cpp $(framework_files)
 c_source_files := $(call find, $(source_paths),*.c) \
 	LibJPEG/source/jaricom.c	\
 	LibJPEG/source/jcomapi.c \
@@ -198,10 +220,9 @@ c_source_files := $(call find, $(source_paths),*.c) \
 	LibJPEG/source/jquant2.c \
 	LibJPEG/source/jutils.c
 
-
-
-object_files := $(source_files:%.cpp=$(object_output_path)/%.o) $(c_source_files:%.c=$(object_output_path)/%.o)
-object_files := $(patsubst $(object_output_path)/$(touchgfx_path)/%,$(object_output_path)/touchgfx/%,$(object_files))
+object_files := $(source_files:$(touchgfx_path)/%.cpp=$(object_output_path)/touchgfx/%.o) $(c_source_files:$(touchgfx_path)/%.c=$(object_output_path)/touchgfx/%.o)
+object_files := $(object_files:%.cpp=$(object_output_path)/%.o)
+object_files := $(object_files:%.c=$(object_output_path)/%.o)
 dependency_files := $(object_files:%.o=%.d)
 
 textconvert_script_path := $(touchgfx_path)/framework/tools/textconvert
@@ -224,9 +245,9 @@ build_executable: $(binary_output_path)/$(simulator_executable)
 ifeq ($(MAKECMDGOALS),build_executable)
 $(shell mkdir -p $(object_output_path))
 ifeq ($(MAKE_VERSION),4.1)
-$(file >$(object_output_path)/objects.tmp) $(foreach F,$(object_files),$(file >>$(object_output_path)/objects.tmp,$F))
+$(file >$(build_root_path)/objects.tmp) $(foreach F,$(object_files),$(file >>$(build_root_path)/objects.tmp,$F))
 else
-$(shell echo "$(object_files)">$(object_output_path)/objects.tmp)
+$(shell echo "$(object_files)">$(build_root_path)/objects.tmp)
 endif
 endif
 
@@ -236,24 +257,25 @@ $(binary_output_path)/$(simulator_executable): $(object_files) $(resource_file)
 	@$(linker) \
 		$(linker_options) $(linker_options_local) \
 		$(patsubst %,-L%,$(library_path)) \
-		@$(object_output_path)/objects.tmp -o $@ $(resource_file) \
-		$(libstart) $(patsubst %,-l%,$(libraries)) $(libend)
-	@rm -f $(object_output_path)/objects.tmp
+		@$(build_root_path)/objects.tmp -o $@ $(resource_file) \
+		$(libstart) $(patsubst %,-l%,$(libraries)) $(libend) $(libextra)
+	@rm -f $(build_root_path)/objects.tmp
 ifeq ($(UNAME), Linux)
+	@if [ -f $(application_path)/simulator/landscape.png ]; then cp $(application_path)/simulator/landscape.png $(binary_output_path); fi
+	@if [ -f $(application_path)/simulator/portrait.png ]; then cp $(application_path)/simulator/portrait.png $(binary_output_path); fi
 	@echo "To be able to run \"$(binary_output_path)/$(simulator_executable)\" type"
-	@echo "     sudo ldconfig $(realpath $(touchgfx_path)/lib/sdl/linux64)"
+	@echo "     sudo ldconfig $(abspath $(touchgfx_path)/lib/sdl2/linux64)"
 	@echo "at the command prompt at least once."
 else
-ifeq ($(UNAME), Darwin)
-	@cp -f $(sdl_library_path)/libSDL-1.2.0.dylib $(binary_output_path)
-	@install_name_tool -change /usr/local/opt/sdl/lib/libSDL-1.2.0.dylib @executable_path/libSDL-1.2.0.dylib $@
-else
-	@cp $(sdl_library_path)/SDL.dll $(binary_output_path)
-	@cp $(sdl_library_path)/SDL_image.dll $(binary_output_path)
-endif
+	@cp $(sdl_library_path)/SDL2.dll $(binary_output_path)
+	@cp $(sdl_library_path)/SDL2_image.dll $(binary_output_path)
+	@cp $(sdl_library_path)/libpng16-16.dll $(binary_output_path)
+	@cp $(sdl_library_path)/zlib1.dll $(binary_output_path)
+	@if [ -f $(application_path)/simulator/landscape.png ]; then cp $(application_path)/simulator/landscape.png $(binary_output_path); fi
+	@if [ -f $(application_path)/simulator/portrait.png ]; then cp $(application_path)/simulator/portrait.png $(binary_output_path); fi
 endif
 
-$(object_output_path)/touchgfx/%.o: $(touchgfx_path)/%.cpp
+$(object_output_path)/touchgfx/%.o: $(touchgfx_path)/%.cpp $(application_path)/config/gcc/app.mk
 	@echo Compiling $<
 	@mkdir -p $(@D)
 	@$(cpp_compiler) \
@@ -261,7 +283,7 @@ $(object_output_path)/touchgfx/%.o: $(touchgfx_path)/%.cpp
 		$(patsubst %,-I%,$(include_paths)) \
 		-c $< -o $@
 
-$(object_output_path)/%.o: %.cpp
+$(object_output_path)/%.o: %.cpp $(application_path)/config/gcc/app.mk
 	@echo Compiling $<
 	@mkdir -p $(@D)
 	@$(cpp_compiler) \
@@ -269,7 +291,7 @@ $(object_output_path)/%.o: %.cpp
 		$(patsubst %,-I%,$(include_paths)) \
 		-c $< -o $@
 
-$(object_output_path)/%.o: %.c
+$(object_output_path)/%.o: %.c $(application_path)/config/gcc/app.mk
 	@echo Compiling $<
 	@mkdir -p $(@D)
 	@$(c_compiler) \
@@ -278,16 +300,27 @@ $(object_output_path)/%.o: %.c
 		-c $< -o $@
 
 ifeq ($(MAKECMDGOALS),build_executable)
+$(firstword $(dependency_files)): $(application_path)/config/gcc/app.mk
+	@rm -rf $(object_output_path)
 -include $(dependency_files)
 endif
 
 _assets_: $(asset_images_output)/include/BitmapDatabase.hpp $(asset_texts_output)/include/texts/TextKeysAndLanguages.hpp
 
-include $(application_path)/$(touchgfx_path)/config/gcc/convert-rules.mk
+ifeq ($(MAKECMDGOALS),$(filter $(MAKECMDGOALS),_all_ _assets_))
+-include $(touchgfx_path)/config/gcc/convert-rules.mk
+endif
 
 _clean_:
 	@echo Cleaning
 	@rm -rf $(build_root_path)
-	@rm -rf $(asset_root_path)
+	# Do not remove gui_generated
+	@rm -rf $(asset_images_output)
+	@rm -rf $(asset_fonts_output)
+	@rm -rf $(asset_texts_output)
+	# Create directory to avoid error if it does not exist
+	@mkdir -p $(asset_root_path)
+	# Remove assets folder if it is empty (i.e. no gui_generated folder)
+	@rmdir --ignore-fail-on-non-empty $(asset_root_path)
 
 endif

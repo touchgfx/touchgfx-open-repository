@@ -1,7 +1,7 @@
-#include <platform/hal/simulator/sdl/HALSDL.hpp>
+#include <platform/hal/simulator/sdl2/HALSDL2.hpp>
 #include <touchgfx/hal/NoDMA.hpp>
 #include <common/TouchGFXInit.hpp>
-#include <platform/driver/touch/SDLTouchController.hpp>
+#include <platform/driver/touch/SDL2TouchController.hpp>
 #if !defined(USE_BPP) || USE_BPP==16
 #include <platform/driver/lcd/LCD16bpp.hpp>
 #elif USE_BPP==24
@@ -26,13 +26,13 @@ int main(int argc, char** argv)
 #elif USE_BPP==1
     LCD1bpp lcd;
 #endif
-    SDLTouchController tc;
+    SDL2TouchController tc;
 
     // Create hardware layer. Use a display size of 480x272. BMP cache with a single dynamic BMP
-    HAL& hal = touchgfx_generic_init<HALSDL>(dma, lcd, tc, 480, 272,  (uint16_t*)bmpCache, sizeof(bmpCache), 1);
+    HAL& hal = touchgfx_generic_init<HALSDL2>(dma, lcd, tc, 480, 272,  (uint16_t*)bmpCache, sizeof(bmpCache), 1);
 
     // Initialize SDL
-    if (!dynamic_cast<HALSDL&>(hal).sdl_init(argc, argv))
+    if (!dynamic_cast<HALSDL2&>(hal).sdl_init(argc, argv))
     {
         return EXIT_FAILURE;
     }
