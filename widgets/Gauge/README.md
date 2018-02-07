@@ -9,6 +9,8 @@ The purpose of the Gauge widget is to provide an application developer with mean
 
 The widget supports a customizable easing equation for animating between set gauge-values. An animations length is determined by a configurable duration. A developer can ask the `LinearGauge` widget for the position of it's gauge level. The shape of the needle and the shadow of the needle is embedded inside the Gauge class and can be changed to suit the application
 
+Note: Canvas Widgets require a work-buffer which can be defined as described in this article: https://touchgfx.zendesk.com/hc/en-us/articles/205074491-Canvas-Widgets
+
 TouchGFX Version
 =================
 
