@@ -75,6 +75,4 @@ Read Full License/Contribution Terms text <a href="license.txt">here</a>.
 
 # Ownership
 
-The TouchGFX framework is a Draupner Graphics product.
-
-<img align="left" width="150" height="118" src="http://touchgfx.com/static/draupner_vlogo.png">
+The TouchGFX framework is a product of ST Microelectronics A/S.
